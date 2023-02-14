@@ -897,6 +897,7 @@ const Home = () => {
         "Creating reusable code and infrastructure for future use.",
         "Agile processes (Scrum & Kanban)",
       ],
+      
       // "Mentoring, Maintain quality and ensure responsiveness of applications.",
     },
     // {
