@@ -41,14 +41,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button2: {
-    border: "1px solid #E3E56D",
+    border: "1px solid darkcyan",
     padding: "10px 80px",
     borderRadius: "10px",
     fontSize: "26px",
     fontFamily: "'Inter', sans-serif",
-    color: "#061A38",
+    color: "#fff",
+    background: "darkcyan",
+    // color: "#061A38",
+    // background: "#E3E56D",
     cursor: "pointer",
-    background: "#E3E56D",
     minWidth: "400px",
     display: "block",
     margin: "auto",
@@ -58,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px",
       padding: "10px 25px",
+      minWidth: "200px",
     },
   },
 }));
@@ -88,10 +91,11 @@ const Email = () => {
       style={{
         background: "#fff",
         maxWidth: "750px",
-        padding: "20px",
-        borderRadius: "25px",
+        padding: "60px",
+        borderRadius: "8px",
         boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         margin: "auto",
+        boxSizing: "border-box",
       }}
     >
       <form ref={form} onSubmit={sendEmail}>

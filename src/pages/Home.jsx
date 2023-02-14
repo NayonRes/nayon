@@ -20,8 +20,13 @@ import work3 from "../assets/images/work3.jpg";
 import work4 from "../assets/images/work4.jpg";
 import NewrozImage from "../assets/images/NewrozImage.png";
 import PaymentIntegration from "../assets/images/Payment-Integration.png";
+import homeBackground from "../assets/images/homeBackground.png";
 import CartSystem from "../assets/images/CartSystem.png";
-import supportPanel from "../assets/images/supportPanel.png";
+import supportPanel from "../assets/images/supportPanel2.png";
+import kindercubby from "../assets/images/kindercubby.png";
+import kindercubbyAdmin from "../assets/images/kindercubbyAdmin.png";
+import skill from "../assets/images/skill.png";
+import education from "../assets/images/education.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -41,18 +46,22 @@ import Avatar from "@mui/material/Avatar";
 import ImageIcon from "@mui/icons-material/Image";
 import WorkIcon from "@mui/icons-material/Work";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-
+import StopIcon from "@mui/icons-material/Stop";
 import TextTransition, { presets } from "react-text-transition";
-
+import CallMadeIcon from "@mui/icons-material/CallMade";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Email from "./Email";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const useStyles = makeStyles((theme) => ({
   themeBackground: {
-    background: "#061A38",
+    backgroundColor: "#061A38",
     // background: "#2b2741",
     boxShadow: "rgb(17 17 26 / 2%) 0px 15px 20px",
+    backgroundImage: `url(${homeBackground})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
   },
   homeContainerStyle: {
     paddingLeft: "0px !important",
@@ -84,6 +93,23 @@ const useStyles = makeStyles((theme) => ({
     // [theme.breakpoints.down("xl")]: {
     //   fontSize: "45px",
     //   lineHeight: "65px",
+  },
+  designationStyle2: {
+    fontSize: "42px",
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: 400,
+    margin: 0,
+    lineHeight: "80px",
+    color: "darkcyan",
+    [theme.breakpoints.down("xl")]: {
+      fontSize: "45px",
+      lineHeight: "65px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "22px",
+      lineHeight: "35px",
+      textAlign: "center",
+    },
   },
   h1: {
     fontSize: "70px",
@@ -119,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
       height: "100%",
       // transform: "scale(0)",
       // background: "black",
-      borderBottom: "3px solid #E3E56D",
+      borderBottom: "3px solid darkcyan",
     },
     [theme.breakpoints.down("xl")]: {
       margin: "0px 0px 35px 0px",
@@ -139,7 +165,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   h3: {
-    fontSize: "30px",
+    fontSize: "24px",
     fontFamily: "'Inter', sans-serif",
     fontWeight: 300,
     margin: 0,
@@ -214,7 +240,7 @@ const useStyles = makeStyles((theme) => ({
   },
   workCard: {
     background: "#fff",
-    minHeight: "240px",
+    minHeight: "220px",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
     borderRadius: "10px",
     [theme.breakpoints.down("sm")]: {
@@ -285,10 +311,10 @@ const useStyles = makeStyles((theme) => ({
   pictureHolder: {
     background: "transparent",
     border: "2px solid #fff",
-    width: "330px !important",
-    height: "330px",
+    width: "350px !important",
+    height: "350px",
     margin: "auto",
-    borderRadius: "50% 25%",
+    borderRadius: "50%",
     [theme.breakpoints.down("xl")]: {
       width: "260px !important",
       height: "260px",
@@ -302,10 +328,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pictureBox: {
-    width: "300px",
-    height: "300px",
+    width: "320px",
+    height: "320px",
     overflow: "hidden",
-    borderRadius: "50% 25%",
+    borderRadius: "50%",
     [theme.breakpoints.down("xl")]: {
       width: "230px",
       height: "230px",
@@ -352,7 +378,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     fontFamily: "'Inter', sans-serif",
     fontWeight: "bold",
-    margin: "12px 0px",
+    margin: "50px 0px",
     color: "#061A38",
     [theme.breakpoints.down("md")]: {
       fontSize: "15px",
@@ -364,7 +390,8 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Inter', sans-serif",
     fontWeight: 300,
     margin: "0px 0px 24px 0px",
-    color: "#061A38",
+    color: "dimgray",
+    // color: "#061A38",
     lineHeight: 1.4,
     [theme.breakpoints.down("md")]: {
       fontSize: "10px",
@@ -379,11 +406,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Inter', sans-serif",
     fontWeight: 500,
     margin: 0,
-    color: "#E3E56D",
+    color: "darkcyan",
     cursor: "pointer",
     padding: "0px 0px 8px 0px",
     display: "inline-block",
-    borderBottom: "2px solid #E3E56D",
+    // borderBottom: "2px solid darkcyan",
     transition: ".5s",
     "&:hover": {
       letterSpacing: "1px",
@@ -396,9 +423,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   navbarStyle: {
+    // display: "none",
     height: "70px",
-    background: "#061A38",
-    // background: "#E3E56D",
+    // background: "#061A38",
+    background: "rgba(0,0,0,0)",
     // borderRadius: "16px 16px 0px 0px",
 
     bottom: 0,
@@ -411,7 +439,7 @@ const useStyles = makeStyles((theme) => ({
     // fontFamily: "'Inter', sans-serif",
     fontWeight: 500,
     margin: 0,
-    color: "#E3E56D",
+    color: "darkcyan",
     // color: "#061A38",
     position: "relative",
     padding: "5px 20px",
@@ -448,8 +476,9 @@ const useStyles = makeStyles((theme) => ({
       // background: "black",
       transition: ".5s",
       zIndex: -1,
-      border: "1px solid #E3E56D",
-      borderRadius: "10px",
+      borderLeft: "1px solid darkcyan",
+      borderRight: "1px solid darkcyan",
+      // borderRadius: "10px",
     },
     "&:hover:after": {
       transform: "scale(1)",
@@ -522,8 +551,9 @@ const useStyles = makeStyles((theme) => ({
     //   fontWeight: 600,
     // },
     // borderBottom: "2px solid black",
-    border: "2px solid #E3E56D",
-    borderRadius: "10px",
+    borderLeft: "2px  solid darkcyan",
+    borderRight: "2px  solid darkcyan",
+    // borderRadius: "10px",
   },
 
   buttonStyle: {
@@ -587,13 +617,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    border: "1px solid #E3E56D",
+    border: "1px solid darkcyan",
     padding: "20px",
     borderRadius: "10px",
     fontSize: "26px",
     fontFamily: "'Inter', sans-serif",
     textDecoration: "none",
-    color: "#E3E56D",
+    color: "darkcyan",
     cursor: "pointer",
     transition: ".5s",
     "&:hover": {
@@ -610,14 +640,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button2: {
-    border: "1px solid #E3E56D",
+    border: "1px solid darkcyan",
     padding: "20px",
     borderRadius: "10px",
     fontSize: "26px",
     fontFamily: "'Inter', sans-serif",
     color: "#061A38",
     cursor: "pointer",
-    background: "#E3E56D",
+    background: "darkcyan",
     [theme.breakpoints.down("md")]: {
       fontSize: "16px",
     },
@@ -629,7 +659,7 @@ const useStyles = makeStyles((theme) => ({
   iconDiv: {
     width: "40px",
     height: "40px",
-    border: "1px solid #E3E56D",
+    border: "1px solid darkcyan",
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
@@ -645,7 +675,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconStyle: {
-    color: "#E3E56D",
+    color: "darkcyan",
     fontSize: "25px !important",
     [theme.breakpoints.down("md")]: {
       fontSize: "18px !important",
@@ -693,9 +723,9 @@ const useStyles = makeStyles((theme) => ({
   },
   nameBox: {
     marginBottom: "50px",
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: "0px",
-    },
+    // [theme.breakpoints.down("sm")]: {
+    //   marginBottom: "0px",
+    // },
   },
   myInfoBox: {
     [theme.breakpoints.down("md")]: {
@@ -801,15 +831,53 @@ const useStyles = makeStyles((theme) => ({
   //   },
   // },
   listIcon: {
-    color: "#fff",
-    fontSize: "15px",
+    // color: "#fff",
+    fontSize: "18px !important",
     marginRight: "5px",
-    background: "#061A38",
-    padding: "3px",
-    borderRadius: "25px",
+    // background: "#061A38",
+    color: "#061A38",
+    border: "1px solid #061A38",
+    // padding: "1px",
+    borderRadius: "0px",
     [theme.breakpoints.down("md")]: {
       fontSize: "6px",
     },
+  },
+  homeInfoBox: {
+    width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "70px",
+    },
+  },
+  experienceBox: {
+    backgroundImage: `url(${skill})`,
+    backgroundSize: "300px",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right bottom",
+    [theme.breakpoints.down("lg")]: {
+      backgroundSize: "200px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      backgroundSize: "0px",
+    },
+  },
+  educationBox: {
+    backgroundImage: `url(${education})`,
+    backgroundSize: "400px",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right center",
+    // marginRight: "200px !important",
+    [theme.breakpoints.down("lg")]: {
+      backgroundSize: "200px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      backgroundSize: "0px",
+    },
+  },
+  linkIconStyle: {
+    fontSize: "18px",
+    position: "relative",
+    top: 3,
   },
 }));
 
@@ -821,7 +889,7 @@ const Home = () => {
       duration: "May 2021 - Present",
       company: "Newroz Technologies Limited.",
       detail: [
-        "Developed and Maintaining 2 new projects (API Integration Website, Admin Panel)",
+        "Developed and Maintaining 4 new projects (Daycare Website,API Integration Website, Daycare Website Admin Panel, Financial Admin Panel)",
         "Refactored 2 projects completely with new efficient architecture (Company Website, Support Panel).",
         "Developing and Maintaining Marketing Panel and Commission panel with new efficient architecture.",
         "Collaborating with the other developers and the testing team.",
@@ -855,33 +923,43 @@ const Home = () => {
   ];
   const educationData = [
     {
-      subject: "Strategy & Direction",
+      subject: "Professional Diploma in IT",
       session: "March 2020 - Present",
-      institute: "ABCD Tech Ltd.",
-      detail:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      institute: "IsDB-BISEW IT Scholarship",
+      detail: [
+        "Computer Fundamentals (120 hours)",
+        "Design and implement databases with MS SQL Server 2016 (104 hours)",
+        "Programming with C# and .Net 4.6.1 (136 hours)",
+        "UML using MS Visio and MS Visual Studio (80 hours)",
+        "Programming in HTML5 with JavaScript & CSS3 (128 hours)",
+        "Introduction to XML, Desktop application using C#, Crystal Report (60 hours)",
+        "Web Application Development with ASP.NET Web Form (80 hours)",
+        "Developing ASP.NET MVC 5 and ASP.NET Core (168 hours)",
+        "Web Application Development with Angular and AngularJS (92 hours)",
+        "Developing Web APIs, Web Services, SignalR (92 hours)",
+      ],
     },
-    {
-      subject: "Strategy & Direction",
-      session: "March 2020 - Present",
-      institute: "ABCD Tech Ltd.",
-      detail:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      subject: "Strategy & Direction",
-      session: "March 2020 - Present",
-      institute: "ABCD Tech Ltd.",
-      detail:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      subject: "Strategy & Direction",
-      session: "March 2020 - Present",
-      institute: "ABCD Tech Ltd.",
-      detail:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
+    // {
+    //   subject: "Strategy & Direction",
+    //   session: "March 2020 - Present",
+    //   institute: "ABCD Tech Ltd.",
+    //   detail:
+    //     "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    // },
+    // {
+    //   subject: "Strategy & Direction",
+    //   session: "March 2020 - Present",
+    //   institute: "ABCD Tech Ltd.",
+    //   detail:
+    //     "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    // },
+    // {
+    //   subject: "Strategy & Direction",
+    //   session: "March 2020 - Present",
+    //   institute: "ABCD Tech Ltd.",
+    //   detail:
+    //     "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    // },
   ];
 
   const [active, setActive] = useState("Home");
@@ -997,7 +1075,12 @@ const Home = () => {
                   {/* <img src={logo} alt="" height="40px" /> */}
                 </Grid>
                 <Grid item onClick={() => fnActive("Home")}>
-                  <p className={classes.BrandNameStyle}>NAYON</p>
+                  <p
+                    className={classes.BrandNameStyle}
+                    style={{ color: "darkcyan" }}
+                  >
+                    NAYON
+                  </p>
                 </Grid>
               </Grid>
             </Grid>
@@ -1012,7 +1095,7 @@ const Home = () => {
                 >
                   <h4 className={`${classes.menuItem}`}>Home</h4>
                 </Grid>
-                <Grid
+                {/* <Grid
                   item
                   className={`${classes.itemStyle} ${
                     active === "Experties" ? classes.active : null
@@ -1020,7 +1103,7 @@ const Home = () => {
                   onClick={() => fnActive("Experties")}
                 >
                   <h4 className={`${classes.menuItem}`}>Experties</h4>
-                </Grid>
+                </Grid> */}
 
                 <Grid
                   item
@@ -1065,7 +1148,7 @@ const Home = () => {
               <MenuIcon
                 fontSize="large"
                 onClick={() => setOpenDrawer(!openDrawer)}
-                style={{ color: "#E3E56D" }}
+                style={{ color: "darkcyan" }}
               />
             </Grid>
           </Grid>
@@ -1078,7 +1161,7 @@ const Home = () => {
               id="Home"
               className={`${classes.sectionPaddingRightLeft} ${classes.homeSectionStyle}`}
             >
-              <div style={{ width: "100%" }}>
+              <div className={classes.homeInfoBox}>
                 <Grid
                   container
                   alignItems="center"
@@ -1086,25 +1169,29 @@ const Home = () => {
                   className={classes.nameBox}
                 >
                   <Grid item sm={12} md={8} className={classes.myInfoBox}>
-                    <Fade left cascade enter spy={reload}>
-                      <div>
-                        <p className={classes.h1}>Hi, I am Nayon Hossain.</p>
-
-                        <p
-                          className={classes.h1}
-                          style={{ color: "#fff", fontWeight: 400 }}
-                        >
-                          I am a{" "}
-                          <TextTransition
-                            text={TEXTS[index % TEXTS.length]}
-                            springConfig={presets.wobbly}
-                            inline={true}
-                            noOverflow={true}
-                            // delay={3000}
-                          />
-                        </p>
-
+                    {/* <Fade left cascade enter spy={reload}> */}
+                    <div>
+                      <p className={classes.h1} style={{ color: "cadetblue" }}>
+                        Hi, I am
                         <br />
+                        <span style={{ color: "cadetblue" }}>
+                          {" "}
+                          Nayon Hossain.
+                        </span>
+                      </p>
+
+                      <p className={classes.designationStyle2}>
+                        I am a{" "}
+                        <TextTransition
+                          text={TEXTS[index % TEXTS.length]}
+                          springConfig={presets.wobbly}
+                          inline={true}
+                          noOverflow={true}
+                          // delay={3000}
+                        />
+                      </p>
+
+                      {/* <br />
                         <br />
                         <div className={classes.designationStyle}>
                           <p
@@ -1113,23 +1200,23 @@ const Home = () => {
                           >
                             Jr. Developer at Newroz Technologies Limited
                           </p>
-                        </div>
-                      </div>
-                    </Fade>
+                        </div> */}
+                    </div>
+                    {/* </Fade> */}
                   </Grid>
                   <Grid item sm={12} md={4} className={classes.myImageBox}>
-                    <Fade right spy={reload}>
-                      <Grid
-                        container
-                        alignItems="center"
-                        justifyContent="center"
-                        className={classes.pictureHolder}
-                      >
-                        <div className={classes.pictureBox}>
-                          <img src={nayon} alt="" width="100%" />
-                        </div>
-                      </Grid>
-                    </Fade>
+                    {/* <Fade right spy={reload}> */}
+                    <Grid
+                      container
+                      alignItems="center"
+                      justifyContent="center"
+                      className={classes.pictureHolder}
+                    >
+                      <div className={classes.pictureBox}>
+                        <img src={nayon} alt="" width="100%" />
+                      </div>
+                    </Grid>
+                    {/* </Fade> */}
                   </Grid>
                 </Grid>
 
@@ -1139,41 +1226,41 @@ const Home = () => {
                   justifyContent="space-between"
                   className={classes.gridMargin}
                 >
-                  <Fade delay={4000} bottom spy={reload}>
+                  <Fade delay={1500} bottom spy={reload}>
                     <Grid item>
                       <p
                         className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#E3E56D" }}
+                        style={{ color: "#819a9b" }}
                       >
                         Develop For
                       </p>
-                      <p className={classes.h4} style={{ color: "#E3E56D" }}>
+                      <p className={classes.h4} style={{ color: "darkcyan" }}>
                         Web Application
                       </p>
                     </Grid>
                   </Fade>
-                  <Fade delay={3000} bottom spy={reload}>
+                  <Fade delay={1000} bottom spy={reload}>
                     <Grid item style={{ textAlign: "right" }}>
                       <p
                         className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#E3E56D" }}
+                        style={{ color: "#819a9b" }}
                       >
                         Phone
                       </p>
-                      <p className={classes.h4} style={{ color: "#E3E56D" }}>
+                      <p className={classes.h4} style={{ color: "darkcyan" }}>
                         (+880) 01793 66 15 17
                       </p>
                     </Grid>
                   </Fade>
-                  <Fade delay={2000} bottom spy={reload}>
+                  <Fade delay={500} bottom spy={reload}>
                     <Grid item style={{ textAlign: "right" }}>
                       <p
                         className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#E3E56D" }}
+                        style={{ color: "#819a9b" }}
                       >
                         Drop your Message
                       </p>
-                      <p className={classes.h4} style={{ color: "#E3E56D" }}>
+                      <p className={classes.h4} style={{ color: "darkcyan" }}>
                         mahnayon@gmail.com
                       </p>
                     </Grid>
@@ -1183,120 +1270,6 @@ const Home = () => {
             </section>
           </Container>
         </div>
-
-        <Container
-          maxWidth="xl"
-          style={{
-            paddingLeft: "0px",
-            paddingRight: "0px",
-          }}
-        >
-          <section
-            id="Experties"
-            className={classes.sectionPaddingWithoutBottom}
-          >
-            <p className={classes.h2}>My Experties</p>
-
-            <Grid container>
-              <Grid item sm={6}>
-                {/* <Fade left spy={reload}> */}
-                <div className={classes.borderStyle1} data-aos="fade-down">
-                  {/* <div className={classes.borderStyle1}> */}
-                  <div className={classes.card}>
-                    <div className={classes.cardImage}>
-                      <img src={Image1} alt="" width="100%" />
-                    </div>
-                    <p className={classes.cardTitle}> Strategy & Direction</p>
-                    <p className={classes.cardDetail}>
-                      {" "}
-                      Understand First. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
-                    </p>
-                    <div className={classes.cardButton}>
-                      Head of design at Calvino
-                    </div>
-                  </div>
-                </div>
-                {/* </Fade> */}
-              </Grid>
-
-              <Grid item sm={6}>
-                {/* <Fade right spy={reload}> */}
-                <div className={classes.borderStyle2} data-aos="fade-left">
-                  {/* <div className={classes.borderStyle2}> */}
-                  <div className={classes.card}>
-                    <div className={classes.cardImage}>
-                      <img src={Image1} alt="" width="100%" />
-                    </div>
-                    <p className={classes.cardTitle}> Strategy & Direction</p>
-                    <p className={classes.cardDetail}>
-                      {" "}
-                      Understand First. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
-                    </p>
-                    <div className={classes.cardButton}>
-                      Head of design at Calvino
-                    </div>
-                  </div>
-                </div>
-                {/* </Fade> */}
-              </Grid>
-
-              <Grid item sm={6}>
-                {/* <Fade left spy={reload}> */}
-                <div className={classes.borderStyle3} data-aos="fade-up">
-                  {/* <div className={classes.borderStyle3}> */}
-                  <div className={classes.card}>
-                    <div className={classes.cardImage}>
-                      <img src={Image1} alt="" width="100%" />
-                    </div>
-                    <p className={classes.cardTitle}> Strategy & Direction</p>
-                    <p className={classes.cardDetail}>
-                      {" "}
-                      Understand First. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
-                    </p>
-                    <div className={classes.cardButton}>
-                      Head of design at Calvino
-                    </div>
-                  </div>
-                </div>
-                {/* </Fade> */}
-              </Grid>
-
-              <Grid item sm={6}>
-                {/* <Fade right spy={reload}> */}
-                <div className={classes.borderStyle4} data-aos="fade-right">
-                  {/* <div className={classes.borderStyle4}> */}
-                  <div className={classes.card}>
-                    <div className={classes.cardImage}>
-                      <img src={Image1} alt="" width="100%" />
-                    </div>
-                    <p className={classes.cardTitle}> Strategy & Direction</p>
-                    <p className={classes.cardDetail}>
-                      {" "}
-                      Understand First. Lorem ipsum dolor sit amet, consectetur
-                      adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.
-                    </p>
-                    <div className={classes.cardButton}>
-                      Head of design at Calvino
-                    </div>
-                  </div>
-                </div>
-                {/* </Fade> */}
-              </Grid>
-            </Grid>
-
-            <div>
-              <p className={classes.cardTitle}> MY SKILLS</p>
-              <WhatIKnow />
-            </div>
-          </section>
-        </Container>
 
         <Container
           maxWidth="xl"
@@ -1343,7 +1316,7 @@ const Home = () => {
                             </div>
                             <p
                               className={classes.cardSubTitle}
-                              style={{ color: "#AAB7B8" }}
+                              style={{ color: "darkcyan" }}
                             >
                               {item.company}
                             </p>
@@ -1351,7 +1324,7 @@ const Home = () => {
                           <Grid item xs={6} style={{ textAlign: "right" }}>
                             <p
                               className={classes.cardSubTitle}
-                              style={{ margin: 0, color: "#AAB7B8" }}
+                              style={{ margin: 0, color: "darkcyan" }}
                             >
                               {" "}
                               {item.duration}
@@ -1372,7 +1345,7 @@ const Home = () => {
                             // style={{ background: "#f9f9f9" }}
                             style={{
                               // boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px",
-                              border: "1px solid #f9f9f9",
+                              // border: "1px solid #f9f9f9",
 
                               marginBottom: "5px",
                               borderRadius: "10px",
@@ -1384,11 +1357,9 @@ const Home = () => {
                                 {/* <Avatar>
                                   <ImageIcon />
                                 </Avatar> */}
-                                <IconButton disabled>
-                                  <ArrowForwardIosIcon
-                                    className={classes.listIcon}
-                                  />
-                                </IconButton>
+                                <Button disabled>
+                                  <StopIcon className={classes.listIcon} />
+                                </Button>
                               </ListItemAvatar>
                               <ListItemText style={{ paddingRight: "10px" }}>
                                 <label
@@ -1491,183 +1462,289 @@ const Home = () => {
                 )
               )}
             </div>
+            <div>
+              <p className={classes.cardTitle}> Tools & Technologies</p>
+              <WhatIKnow />
+            </div>
           </section>
         </Container>
-
-        <Container
-          maxWidth="xl"
+        <div
           style={{
-            paddingLeft: "0px",
-            paddingRight: "0px",
+            background: "#fff6ee",
+            marginTop: "60px",
+            paddingBottom: "60px",
           }}
         >
-          <section
-            id="My Works"
-            className={classes.sectionPaddingWithoutBottom}
+          <Container
+            maxWidth="xl"
+            style={{
+              paddingLeft: "0px",
+              paddingRight: "0px",
+            }}
           >
-            <p className={classes.h2}>My Works</p>
-            <div className={classes.NotCard}>
-              <Grid container spacing={4}>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
-                  <Grid
-                    className={classes.workCard}
-                    container
-                    alignItems="center"
-                    data-aos="fade-zoom-in"
-                  >
-                    <Grid item xs={4} style={{ position: "relative" }}>
-                      <img
-                        src={NewrozImage}
-                        alt=""
-                        className={classes.workCardImg}
-                        data-aos="fade-right"
-                        data-aos-offset="50"
-                        data-aos-easing="ease-in-sine"
-                      />
-                    </Grid>
-                    <Grid item xs={8} className={classes.workCardDetailSide}>
-                      <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
-                          {" "}
-                          Newroz Technologies Limited
-                        </p>
-                      </div>
-                      <p className={classes.cardDetail} style={{ margin: 0 }}>
-                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                        Material-UI, JavaScript,React Js React Hooks,React
-                        Context API,RESTful APIs.
-                      </p>
-                      <br />
-                      <a
-                        href="https://www.newroztech.com/"
-                        target="_blank"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <Button
-                          color="secondary"
-                          variant="contained"
-                          disableElevation
+            <section
+              id="My Works"
+              className={classes.sectionPaddingWithoutBottom}
+            >
+              <p className={classes.h2}>My Works</p>
+              <div className={classes.NotCard}>
+                <Grid container spacing={4}>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={NewrozImage}
+                          alt=""
+                          className={classes.workCardImg}
+                          data-aos="fade-right"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
+                      <Grid item xs={8} className={classes.workCardDetailSide}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            Newroz Technologies Limited
+                          </p>
+                        </div>
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
                         >
-                          Take a look
-                        </Button>
-                      </a>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
+                        </p>
+
+                        <a
+                          href="https://www.newroztech.com/"
+                          target="_blank"
+                          style={{ textDecoration: "none" }}
+                          className={classes.cardButton}
+                        >
+                          <LaunchIcon className={classes.linkIconStyle} /> Take
+                          a look
+                        </a>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
-                  <Grid
-                    className={classes.workCard}
-                    container
-                    alignItems="center"
-                    data-aos="fade-zoom-in"
-                  >
-                    <Grid item xs={8} className={classes.workCardDetailSide2}>
-                      <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
-                          {" "}
-                          Payment Integration API
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={8} className={classes.workCardDetailSide2}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            Payment Integration API
+                          </p>
+                        </div>
+                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
                         </p>
-                      </div>
-                      <p className={classes.cardDetail} style={{ margin: 0 }}>
-                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                        Material-UI, JavaScript,React Js React Hooks,React
-                        Context API,RESTful APIs.
-                      </p>
-                      <br />
-                      <a
-                        href="https://developer.fast-pay.iq"
-                        target="_blank"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <Button
-                          color="secondary"
-                          variant="contained"
-                          disableElevation
+                        <br />
+                        <a
+                          href="https://developer.fast-pay.iq"
+                          target="_blank"
+                          style={{ textDecoration: "none" }}
                         >
-                          Take a look
-                        </Button>
-                      </a>
-                    </Grid>
-                    <Grid item xs={4} style={{ position: "relative" }}>
-                      <img
-                        src={PaymentIntegration}
-                        alt=""
-                        className={classes.workCardImg}
-                        style={{ right: "-20px", left: "auto" }}
-                        data-aos="fade-left"
-                        data-aos-offset="50"
-                        data-aos-easing="ease-in-sine"
-                      />
+                          <Button
+                            color="secondary"
+                            variant="outlined"
+                            size="small"
+                            disableElevation
+                          >
+                            Take a look
+                          </Button>
+                        </a>
+                      </Grid>
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={PaymentIntegration}
+                          alt=""
+                          className={classes.workCardImg}
+                          style={{ right: "-20px", left: "auto" }}
+                          data-aos="fade-left"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
-                  <Grid
-                    className={classes.workCard}
-                    container
-                    alignItems="center"
-                    data-aos="fade-zoom-in"
-                  >
-                    <Grid item xs={4} style={{ position: "relative" }}>
-                      <img
-                        src={CartSystem}
-                        alt=""
-                        className={classes.workCardImg}
-                        data-aos="fade-right"
-                        data-aos-offset="50"
-                        data-aos-easing="ease-in-sine"
-                      />
-                    </Grid>
-                    <Grid item xs={8} className={classes.workCardDetailSide}>
-                      <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
-                          {" "}
-                          E-Commerce Cart System
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={kindercubby}
+                          alt=""
+                          className={classes.workCardImg}
+                          data-aos="fade-right"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
+                      <Grid item xs={8} className={classes.workCardDetailSide}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            Kinder Cubby
+                          </p>
+                        </div>
+                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
                         </p>
-                      </div>
-                      <p className={classes.cardDetail} style={{ margin: 0 }}>
-                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                        Material-UI, JavaScript,React Js React Hooks,React
-                        Context API,RESTful APIs.
-                      </p>
-                      <br />
-                      <a
+                        <br />
+                        <a
+                          href="https://www.kindercubby.com/"
+                          target="_blank"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Button
+                            color="secondary"
+                            variant="outlined"
+                            disableElevation
+                            size="small"
+                          >
+                            Take a look
+                          </Button>
+                        </a>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={8} className={classes.workCardDetailSide2}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            E-Commerce Cart System
+                          </p>
+                        </div>
+                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
+                        </p>
+                        <br />
+                        <a
+                          href="https://fastpay-ecom.netlify.app/"
+                          target="_blank"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Button
+                            color="secondary"
+                            variant="outlined"
+                            size="small"
+                            disableElevation
+                          >
+                            Take a look
+                          </Button>
+                        </a>
+                      </Grid>
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={CartSystem}
+                          alt=""
+                          className={classes.workCardImg}
+                          style={{ right: "-20px", left: "auto" }}
+                          data-aos="fade-left"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={kindercubbyAdmin}
+                          alt=""
+                          className={classes.workCardImg}
+                          data-aos="fade-right"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
+                      <Grid item xs={8} className={classes.workCardDetailSide}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            Admin Panel
+                          </p>
+                        </div>
+                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
+                        </p>
+                        <br />
+                        {/* <a
                         href="https://fastpay-ecom.netlify.app/"
                         target="_blank"
                         style={{ textDecoration: "none" }}
                       >
                         <Button
                           color="secondary"
-                          variant="contained"
+                          variant="outlined"
                           disableElevation
+                          size="small"
                         >
                           Take a look
                         </Button>
-                      </a>
+                      </a> */}
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
-                  <Grid
-                    className={classes.workCard}
-                    container
-                    alignItems="center"
-                    data-aos="fade-zoom-in"
-                  >
-                    <Grid item xs={8} className={classes.workCardDetailSide2}>
-                      <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
-                          {" "}
-                          Support Panel
+                  <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                    <Grid
+                      className={classes.workCard}
+                      container
+                      alignItems="center"
+                      data-aos="fade-zoom-in"
+                    >
+                      <Grid item xs={8} className={classes.workCardDetailSide2}>
+                        <div className={classes.cardTitleMargin}>
+                          <p className={classes.h3} style={{ fontWeight: 400 }}>
+                            {" "}
+                            Support Panel
+                          </p>
+                        </div>
+                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js React Hooks,React
+                          Context API,RESTful APIs.
                         </p>
-                      </div>
-                      <p className={classes.cardDetail} style={{ margin: 0 }}>
-                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                        Material-UI, JavaScript,React Js React Hooks,React
-                        Context API,RESTful APIs.
-                      </p>
-                      <br />
-                      {/* <a
+                        <br />
+                        {/* <a
                     href="https://www.newroztech.com/"
                     target="_blank"
                     style={{ textDecoration: "none" }}
@@ -1680,143 +1757,32 @@ const Home = () => {
                       Take a look
                     </Button>
                   </a> */}
-                    </Grid>
-                    <Grid item xs={4} style={{ position: "relative" }}>
-                      <img
-                        src={supportPanel}
-                        alt=""
-                        className={classes.workCardImg}
-                        style={{ right: "-20px", left: "auto" }}
-                        data-aos="fade-left"
-                        data-aos-offset="50"
-                        data-aos-easing="ease-in-sine"
-                      />
+                      </Grid>
+                      <Grid item xs={4} style={{ position: "relative" }}>
+                        <img
+                          src={supportPanel}
+                          alt=""
+                          className={classes.workCardImg}
+                          style={{ right: "-20px", left: "auto" }}
+                          data-aos="fade-left"
+                          data-aos-offset="50"
+                          data-aos-easing="ease-in-sine"
+                        />
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-              <Grid container spacing={4} style={{ display: "none" }}>
-                <Grid item xs={6}>
-                  {/* <Pulse spy={reload}> */}
-                  <a
-                    href="https://www.newroztech.com/"
-                    target="_blank"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div className={classes.workDivStyle} data-aos="zoom-in-up">
-                      {/* <div className={classes.workDivStyle}> */}
-                      {/* <div className={classes.workHoverDiv}>
-                        <div className={classes.workHoverDivText}>
-                          <p
-                            className={classes.h5}
-                            style={{
-                              letterSpacing: "2px",
-                              color: "#16A085",
-                              // webkitTextStroke: ".2px white",
-                            }}
-                          >
-                            IT Services and IT Consulting Company
-                          </p>
-                          <p className={classes.workCardText}>
-                            www.newroztech.com
-                          </p>
-                        </div>
-                      </div> */}
-                      <img
-                        src={NewrozImage}
-                        alt=""
-                        height="120px"
-                        width="100%"
-                      />
-                      <p style={{ color: "green" }}>
-                        Technologies: HTML 5, CSS 3, Material-UI,
-                        JavaScript,React Js React Hooks,React Context
-                        API,RESTful APIs.
-                      </p>
-                    </div>
-                  </a>
-                  {/* </Pulse> */}
-                </Grid>
-                <Grid item xs={6}>
-                  {/* <Pulse spy={reload}> */}
-                  <a href="https://developer.fast-pay.iq/" target="_blank">
-                    <div className={classes.workDivStyle} data-aos="zoom-in-up">
-                      {/* <div className={classes.workDivStyle}> */}
-                      <div className={classes.workHoverDiv}>
-                        <div className={classes.workHoverDivText}>
-                          <p
-                            className={classes.h5}
-                            style={{ letterSpacing: "2px", color: "#16A085" }}
-                          >
-                            Payment Integration API
-                          </p>
-                          <p className={classes.workCardText}>
-                            https://developer.fast-pay.iq
-                          </p>
-                        </div>
-                      </div>
-                      <img
-                        src={PaymentIntegration}
-                        alt=""
-                        height="100%"
-                        width="100%"
-                      />
-                    </div>
-                  </a>
-                  {/* </Pulse> */}
-                </Grid>
-                <Grid item xs={6}>
-                  {/* <Pulse spy={reload}> */}
-                  <a href="https://fastpay-ecom.netlify.app/" target="_blank">
-                    <div className={classes.workDivStyle} data-aos="zoom-in-up">
-                      {/* <div className={classes.workDivStyle}> */}
-                      <div className={classes.workHoverDiv}>
-                        <div className={classes.workHoverDivText}>
-                          <p
-                            className={classes.h5}
-                            style={{ letterSpacing: "2px", color: "#16A085" }}
-                          >
-                            E-Commerce Cart System
-                          </p>
-                          <p className={classes.workCardText}>
-                            https://fastpay-ecom.netlify.app/
-                          </p>
-                        </div>
-                      </div>
-                      <img src={CartSystem} alt="" height="100%" width="100%" />
-                    </div>
-                  </a>
-                  {/* </Pulse> */}
-                </Grid>
-                <Grid item xs={6}>
-                  {/* <Pulse spy={reload} > */}
-                  <div className={classes.workDivStyle} data-aos="zoom-in-up">
-                    {/* <div className={classes.workDivStyle}> */}
-                    <div className={classes.workHoverDiv}>
-                      <div className={classes.workHoverDivText}>
-                        <p
-                          className={classes.h5}
-                          style={{ letterSpacing: "2px", color: "#16A085" }}
-                        >
-                          Support Panel
-                        </p>
-                        {/* <p className={classes.workCardText}>DailyShop247.com</p> */}
-                      </div>
-                    </div>
-                    <img src={supportPanel} alt="" height="100%" width="100%" />
-                  </div>
-                  {/* </Pulse> */}
-                </Grid>
-              </Grid>
-            </div>
-          </section>
-        </Container>
+              </div>
+            </section>
+          </Container>
+        </div>
 
         <Container
           maxWidth="xl"
           style={{
             paddingLeft: "0px",
             paddingRight: "0px",
+            marginBottom: "60px",
           }}
         >
           <section
@@ -1824,7 +1790,7 @@ const Home = () => {
             className={classes.sectionPaddingWithoutBottom}
           >
             <p className={classes.h2}>Education</p>
-            <div className={classes.experienceBox}>
+            <div className={classes.educationBox}>
               {educationData.map((item, i) =>
                 i % 2 === 0 ? (
                   // <Fade left key={i} spy={reload}>
@@ -1852,22 +1818,63 @@ const Home = () => {
                               </p>
                             </div>
                             <p
-                              className={classes.cardDetail}
-                              style={{ margin: 0 }}
+                              className={classes.cardSubTitle}
+                              style={{ margin: 0, color: "darkcyan" }}
                             >
-                              {" "}
-                              {item.session}
+                              {item.institute}
                             </p>
                           </Grid>
-                          <Grid item xs={6} style={{ textAlign: "right" }}>
+                          {/* <Grid item xs={6} style={{ textAlign: "right" }}>
                             <p className={classes.h5}>
                               <span style={{ color: "#AAB7B8" }}>at</span>{" "}
                               {item.institute}
                             </p>
-                          </Grid>
+                          </Grid> */}
                         </Grid>
                       </div>
-                      <p className={classes.cardDetail}>{item.detail}</p>
+                      {/* <p className={classes.cardDetail}>{item.detail}</p> */}
+                      {/* 111 */}
+                      {item.detail?.map((item, i) => (
+                        <>
+                          <List
+                            sx={{
+                              width: "100%",
+                            }}
+                            key={i}
+                            data-aos="fade-left"
+                            data-aos-delay="300"
+                            // data-aos-offset="200"
+                            // style={{ background: "#f9f9f9" }}
+                            style={{
+                              // boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px",
+                              // border: "1px solid #f9f9f9",
+
+                              marginBottom: "5px",
+                              // borderRadius: "10px",
+                              padding: "0px",
+                            }}
+                          >
+                            <ListItem style={{ padding: "0px" }}>
+                              <ListItemAvatar style={{ minWidth: "0px" }}>
+                                {/* <Avatar>
+                                  <ImageIcon />
+                                </Avatar> */}
+                                <Button disabled>
+                                  <StopIcon className={classes.listIcon} />
+                                </Button>
+                              </ListItemAvatar>
+                              <ListItemText style={{ paddingRight: "10px" }}>
+                                <label
+                                  className={classes.cardDetail}
+                                  style={{ margin: "0px" }}
+                                >
+                                  {item}
+                                </label>
+                              </ListItemText>
+                            </ListItem>
+                          </List>
+                        </>
+                      ))}
                     </div>
                   </div>
                 ) : (
@@ -1927,7 +1934,7 @@ const Home = () => {
             }}
           >
             <section id="Contact" className={classes.sectionPaddingAllSide}>
-              <p className={classes.h2} style={{ color: "#E3E56D" }}>
+              <p className={classes.h2} style={{ color: "darkcyan" }}>
                 Contact Me
               </p>
               <div
