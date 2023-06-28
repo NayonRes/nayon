@@ -557,9 +557,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   buttonStyle: {
-    background: "black !important",
-    padding: "0px !important",
-    borderRadius: "5px !important",
+    padding: "4px 16px !important",
+    borderRadius: "50px !important",
   },
   cardContainer: {
     borderBottom: "2px solid #F2EFEF",
@@ -897,7 +896,7 @@ const Home = () => {
         "Creating reusable code and infrastructure for future use.",
         "Agile processes (Scrum & Kanban)",
       ],
-      
+
       // "Mentoring, Maintain quality and ensure responsiveness of applications.",
     },
     // {
@@ -1514,15 +1513,22 @@ const Home = () => {
                             Newroz Technologies Limited
                           </p>
                         </div>
+
+                        <p
+                          className={`${classes.cardDetail}`}
+                          style={{ marginBottom: "5px" }}
+                        >
+                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                          Material-UI, JavaScript,React Js, React Hooks,React
+                          Context API,RESTful APIs.
+                        </p>
                         <p
                           className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
                         >
-                          <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
-                          Context API,RESTful APIs.
+                          <b>Desinged :</b> Adobe XD to React js
                         </p>
 
-                        <a
+                        {/* <a
                           href="https://www.newroztech.com/"
                           target="_blank"
                           style={{ textDecoration: "none" }}
@@ -1530,6 +1536,22 @@ const Home = () => {
                         >
                           <LaunchIcon className={classes.linkIconStyle} /> Take
                           a look
+                        </a> */}
+                        <a
+                          href="https://www.newroztech.com/"
+                          target="_blank"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Button
+                            color="primary"
+                            variant="contained"
+                            size="small"
+                            disableElevation
+                            startIcon={<LaunchIcon />}
+                            className={classes.buttonStyle}
+                          >
+                            Take a look
+                          </Button>
                         </a>
                       </Grid>
                     </Grid>
@@ -1548,22 +1570,32 @@ const Home = () => {
                             Payment Integration API
                           </p>
                         </div>
-                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                        <p
+                          className={classes.cardDetail}
+                          style={{ marginBottom: "5px" }}
+                        >
                           <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
+                          Material-UI, JavaScript,React Js, React Hooks,React
                           Context API,RESTful APIs.
                         </p>
-                        <br />
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        >
+                          <b>Desinged :</b> Own Design
+                        </p>
+
                         <a
                           href="https://developer.fast-pay.iq"
                           target="_blank"
                           style={{ textDecoration: "none" }}
                         >
                           <Button
-                            color="secondary"
-                            variant="outlined"
+                            color="primary"
+                            variant="contained"
                             size="small"
                             disableElevation
+                            startIcon={<LaunchIcon />}
+                            className={classes.buttonStyle}
                           >
                             Take a look
                           </Button>
@@ -1606,22 +1638,31 @@ const Home = () => {
                             Kinder Cubby
                           </p>
                         </div>
-                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                        <p
+                          className={classes.cardDetail}
+                          style={{ marginBottom: "5px" }}
+                        >
                           <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
+                          Material-UI, JavaScript,React Js, React Hooks,React
                           Context API,RESTful APIs.
                         </p>
-                        <br />
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        >
+                          <b>Desinged :</b> Figma to React js
+                        </p>
                         <a
                           href="https://www.kindercubby.com/"
                           target="_blank"
                           style={{ textDecoration: "none" }}
                         >
                           <Button
-                            color="secondary"
-                            variant="outlined"
-                            disableElevation
+                            color="primary"
+                            variant="contained"
                             size="small"
+                            disableElevation
+                            startIcon={<LaunchIcon />}
+                            className={classes.buttonStyle}
                           >
                             Take a look
                           </Button>
@@ -1643,22 +1684,31 @@ const Home = () => {
                             E-Commerce Cart System
                           </p>
                         </div>
-                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                        <p
+                          className={classes.cardDetail}
+                          style={{ marginBottom: "5px" }}
+                        >
                           <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
+                          Material-UI, JavaScript,React Js, React Hooks,React
                           Context API,RESTful APIs.
                         </p>
-                        <br />
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        >
+                          <b>Desinged :</b> Own Design
+                        </p>
                         <a
                           href="https://fastpay-ecom.netlify.app/"
                           target="_blank"
                           style={{ textDecoration: "none" }}
                         >
                           <Button
-                            color="secondary"
-                            variant="outlined"
+                            color="primary"
+                            variant="contained"
                             size="small"
                             disableElevation
+                            startIcon={<LaunchIcon />}
+                            className={classes.buttonStyle}
                           >
                             Take a look
                           </Button>
@@ -1702,12 +1752,19 @@ const Home = () => {
                             Admin Panel
                           </p>
                         </div>
-                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                        <p
+                          className={`${classes.cardDetail}`}
+                          style={{ marginBottom: "5px" }}
+                        >
                           <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
+                          Material-UI, JavaScript,React Js, React Hooks,React
                           Context API,RESTful APIs.
                         </p>
-                        <br />
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        >
+                          <b>Desinged :</b> Own Design
+                        </p>
                         {/* <a
                         href="https://fastpay-ecom.netlify.app/"
                         target="_blank"
@@ -1739,12 +1796,19 @@ const Home = () => {
                             Support Panel
                           </p>
                         </div>
-                        <p className={classes.cardDetail} style={{ margin: 0 }}>
+                        <p
+                          className={`${classes.cardDetail}`}
+                          style={{ marginBottom: "5px" }}
+                        >
                           <b>Frontend Technologies :</b> HTML 5, CSS 3,
-                          Material-UI, JavaScript,React Js React Hooks,React
+                          Material-UI, JavaScript,React Js, React Hooks,React
                           Context API,RESTful APIs.
                         </p>
-                        <br />
+                        <p
+                          className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        >
+                          <b>Desinged :</b> Own Design
+                        </p>
                         {/* <a
                     href="https://www.newroztech.com/"
                     target="_blank"
