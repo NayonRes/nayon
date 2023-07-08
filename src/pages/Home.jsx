@@ -27,6 +27,10 @@ import kindercubby from "../assets/images/kindercubby.png";
 import kindercubbyAdmin from "../assets/images/kindercubbyAdmin.png";
 import skill from "../assets/images/skill.png";
 import education from "../assets/images/education.png";
+import agile from "../assets/images/agile.png";
+import design from "../assets/images/design.png";
+import appDevelopment from "../assets/images/appDevelopment.png";
+import refactor from "../assets/images/refactor.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -53,6 +57,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Email from "./Email";
 import LaunchIcon from "@mui/icons-material/Launch";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const useStyles = makeStyles((theme) => ({
   themeBackground: {
@@ -378,6 +383,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     fontFamily: "'Inter', sans-serif",
     fontWeight: "bold",
+    margin: "20px 0px",
+    color: "#061A38",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "15px",
+      margin: "10px 0px",
+    },
+  },
+  cardTitle2: {
+    fontSize: "24px",
+    fontFamily: "'Inter', sans-serif",
+    fontWeight: "bold",
     margin: "50px 0px",
     color: "#061A38",
     [theme.breakpoints.down("md")]: {
@@ -557,7 +573,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   buttonStyle: {
-    padding: "4px 16px !important",
+    padding: "5px 16px 4px 16px !important",
     borderRadius: "50px !important",
   },
   cardContainer: {
@@ -1283,187 +1299,103 @@ const Home = () => {
             className={classes.sectionPaddingWithoutBottom}
           >
             <p className={classes.h2}>Experience</p>
-            <div className={classes.experienceBox}>
-              {experienceData.map((item, i) =>
-                i % 2 === 0 ? (
-                  // <Fade enter left key={i} spy={reload}>
-                  <div
-                    className={classes.cardBox}
-                    key={i}
-                    data-aos="zoom-in"
-                    style={{ boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px" }}
-                    // data-aos="fade-right"
-                  >
-                    {/* <div className={classes.cardBox} key={i}> */}
-                    <div className={classes.card}>
-                      <div className={classes.cardTitleBox}>
-                        <Grid
-                          container
-                          alignItems="center"
-                          style={{
-                            marginBottom: 24,
-                          }}
-                        >
-                          <Grid item xs={6}>
-                            <div className={classes.cardTitleMargin}>
-                              <p
-                                className={classes.h3}
-                                style={{ fontWeight: 400 }}
-                              >
-                                {" "}
-                                {item.designation}
-                              </p>
-                            </div>
-                            <p
-                              className={classes.cardSubTitle}
-                              style={{ color: "darkcyan" }}
-                            >
-                              {item.company}
-                            </p>
-                          </Grid>
-                          <Grid item xs={6} style={{ textAlign: "right" }}>
-                            <p
-                              className={classes.cardSubTitle}
-                              style={{ margin: 0, color: "darkcyan" }}
-                            >
-                              {" "}
-                              {item.duration}
-                            </p>
-                          </Grid>
-                        </Grid>
-                      </div>
-                      {item.detail?.map((item, i) => (
-                        <>
-                          <List
-                            sx={{
-                              width: "100%",
-                            }}
-                            key={i}
-                            data-aos="fade-left"
-                            data-aos-delay="300"
-                            // data-aos-offset="200"
-                            // style={{ background: "#f9f9f9" }}
-                            style={{
-                              // boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px",
-                              // border: "1px solid #f9f9f9",
-
-                              marginBottom: "5px",
-                              borderRadius: "10px",
-                              padding: "0px",
-                            }}
-                          >
-                            <ListItem style={{ padding: "0px" }}>
-                              <ListItemAvatar style={{ minWidth: "0px" }}>
-                                {/* <Avatar>
-                                  <ImageIcon />
-                                </Avatar> */}
-                                <Button disabled>
-                                  <StopIcon className={classes.listIcon} />
-                                </Button>
-                              </ListItemAvatar>
-                              <ListItemText style={{ paddingRight: "10px" }}>
-                                <label
-                                  className={classes.cardDetail}
-                                  style={{ margin: "0px" }}
-                                >
-                                  {item}
-                                </label>
-                              </ListItemText>
-                            </ListItem>
-                          </List>
-                          {/* <div
-                            key={i}
-                            data-aos="fade-left"
-                            data-aos-delay="300"
-                            // data-aos-offset="200"
-                            // style={{ background: "#f9f9f9" }}
-                            style={{
-                              // boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px",
-                              border: "1px solid #f9f9f9",
-                              padding: "5px 0px",
-                              marginBottom: "5px",
-                              borderRadius: "10px",
-                            }}
-                          >
-                            <span>
-                              {" "}
-                              <IconButton disabled>
-                                <ArrowForwardIosIcon
-                                  style={{
-                                    color: "#fff",
-                                    fontSize: "15px",
-                                    marginRight: "5px",
-                                    background: "#061A38",
-                                    padding: "3px",
-                                    borderRadius: "25px",
-                                  }}
-                                />
-                              </IconButton>
-                            </span>
-                            <span>
-                              <label
-                                className={classes.cardDetail}
-                                style={{ margin: "0px" }}
-                              >
-                                {item}
-                              </label>
-                            </span>
-                          </div> */}
-                        </>
-                      ))}
+            <Grid container>
+              <Grid item sm={6}>
+                {/* <Fade left spy={reload}> */}
+                <div className={classes.borderStyle1} data-aos="fade-down">
+                  {/* <div className={classes.borderStyle1}> */}
+                  <div className={classes.card}>
+                    <div className={classes.cardImage}>
+                      <img src={appDevelopment} alt="" width="100%" />
                     </div>
+                    <p className={classes.cardTitle}>
+                      Developed and Maintaining
+                    </p>
+                    <p className={classes.cardDetail}>
+                      {" "}
+                      4 new projects (Daycare Website,API Integration Website,
+                      Daycare Website Admin Panel, Financial Admin Panel)
+                    </p>
+                    {/* <div className={classes.cardButton}>
+                      Head of design at Calvino
+                    </div> */}
                   </div>
-                ) : (
-                  // </Fade>
-                  // <Fade enter right key={i} spy={reload}>
-                  <div className={classes.cardBox} key={i} data-aos="fade-left">
-                    {/* <div className={classes.cardBox} key={i}> */}
-                    <div className={classes.card}>
-                      <div className={classes.cardTitleBox}>
-                        <Grid
-                          container
-                          alignItems="center"
-                          style={{ marginBottom: 24 }}
-                        >
-                          <Grid item xs={6}>
-                            <div className={classes.cardTitleMargin}>
-                              <p
-                                className={classes.h3}
-                                style={{ fontWeight: 400 }}
-                              >
-                                {" "}
-                                {item.designation}
-                              </p>
-                            </div>
+                </div>
+                {/* </Fade> */}
+              </Grid>
 
-                            <p
-                              className={classes.cardDetail}
-                              style={{ margin: 0 }}
-                            >
-                              {" "}
-                              {item.duration}
-                            </p>
-                          </Grid>
-                          <Grid item xs={6} style={{ textAlign: "right" }}>
-                            <p
-                              className={classes.h5}
-                              style={{ color: "#061A38" }}
-                            >
-                              <span style={{ color: "#AAB7B8" }}>at</span>{" "}
-                              {item.company}
-                            </p>
-                          </Grid>
-                        </Grid>
-                      </div>
-                      <p className={classes.cardDetail}>{item.detail}</p>
+              <Grid item sm={6}>
+                {/* <Fade right spy={reload}> */}
+                <div className={classes.borderStyle2} data-aos="fade-left">
+                  {/* <div className={classes.borderStyle2}> */}
+                  <div className={classes.card}>
+                    <div className={classes.cardImage}>
+                      <img src={refactor} alt="" width="100%" />
                     </div>
+                    <p className={classes.cardTitle}>
+                      {" "}
+                      Refactored and Maintaining
+                    </p>
+                    <p className={classes.cardDetail}>
+                      {" "}
+                      2 projects completely with new efficient architecture
+                      <br />
+                      (Company Website, Support Panel).
+                    </p>
+                    {/* <div className={classes.cardButton}>
+                      Head of design at Calvino
+                    </div> */}
                   </div>
-                  // </Fade>
-                )
-              )}
-            </div>
+                </div>
+                {/* </Fade> */}
+              </Grid>
+
+              <Grid item sm={6}>
+                {/* <Fade left spy={reload}> */}
+                <div className={classes.borderStyle3} data-aos="fade-up">
+                  {/* <div className={classes.borderStyle3}> */}
+                  <div className={classes.card}>
+                    <div className={classes.cardImage}>
+                      <img src={design} alt="" width="100%" />
+                    </div>
+                    <p className={classes.cardTitle}> Adobe XD & Figma</p>
+                    <p className={classes.cardDetail}>
+                      {" "}
+                      Experience with creating React Application using <br />{" "}
+                      Adobe XD & Figma design
+                    </p>
+                    {/* <div className={classes.cardButton}>
+                      Head of design at Calvino
+                    </div> */}
+                  </div>
+                </div>
+                {/* </Fade> */}
+              </Grid>
+
+              <Grid item sm={6}>
+                {/* <Fade right spy={reload}> */}
+                <div className={classes.borderStyle4} data-aos="fade-right">
+                  {/* <div className={classes.borderStyle4}> */}
+                  <div className={classes.card}>
+                    <div className={classes.cardImage}>
+                      <img src={agile} alt="" width="100%" />
+                    </div>
+                    <p className={classes.cardTitle}> Agile processes</p>
+                    <p className={classes.cardDetail}>
+                      {" "}
+                      Experience with Scrum and Kanban frameworks of Agile
+                      software development to manage and organize work.
+                    </p>
+                    {/* <div className={classes.cardButton}>
+                      Head of design at Calvino
+                    </div> */}
+                  </div>
+                </div>
+                {/* </Fade> */}
+              </Grid>
+            </Grid>
             <div>
-              <p className={classes.cardTitle}> Tools & Technologies</p>
+              <p className={classes.cardTitle2}> Tools & Technologies</p>
               <WhatIKnow />
             </div>
           </section>
@@ -1547,7 +1479,7 @@ const Home = () => {
                             variant="contained"
                             size="small"
                             disableElevation
-                            startIcon={<LaunchIcon />}
+                            startIcon={<LanguageIcon />}
                             className={classes.buttonStyle}
                           >
                             Take a look
@@ -1594,7 +1526,7 @@ const Home = () => {
                             variant="contained"
                             size="small"
                             disableElevation
-                            startIcon={<LaunchIcon />}
+                            startIcon={<LanguageIcon />}
                             className={classes.buttonStyle}
                           >
                             Take a look
@@ -1661,7 +1593,7 @@ const Home = () => {
                             variant="contained"
                             size="small"
                             disableElevation
-                            startIcon={<LaunchIcon />}
+                            startIcon={<LanguageIcon />}
                             className={classes.buttonStyle}
                           >
                             Take a look
@@ -1707,7 +1639,7 @@ const Home = () => {
                             variant="contained"
                             size="small"
                             disableElevation
-                            startIcon={<LaunchIcon />}
+                            startIcon={<LanguageIcon size="large" />}
                             className={classes.buttonStyle}
                           >
                             Take a look
