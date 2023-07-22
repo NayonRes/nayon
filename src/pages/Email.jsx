@@ -106,7 +106,7 @@ const Email = ({ darkMode }) => {
                 <span style={{ color: "#ff4a57" }}>Message</span> Me
               </p> */}
         <Grid container spacing={3}>
-          <Grid item sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             {" "}
             <TextField
               fullWidth
@@ -119,7 +119,7 @@ const Email = ({ darkMode }) => {
             />
           </Grid>
 
-          <Grid item sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <TextField
               fullWidth
               className={`${darkMode && "message_form_input_style"}`}
