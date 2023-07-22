@@ -16,15 +16,18 @@ import SchoolIcon from "@mui/icons-material/School";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import GrainIcon from "@mui/icons-material/Grain";
 import SurfingIcon from "@mui/icons-material/Surfing";
+import Brightness4OutlinedIcon from "@mui/icons-material/Brightness4Outlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import { IconButton } from "@mui/material";
 
 const useStyles = makeStyles((theme) => ({
   BrandNameStyle: {
     fontSize: "30px",
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     fontWeight: "bold",
     margin: 0,
 
-    color: "darkcyan",
+    color: "#ff4a57",
     // [theme.breakpoints.down("xl")]: {
     //   fontSize: "45px",
     //   lineHeight: "65px",
@@ -33,17 +36,23 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiTypography-root": {
       fontSize: "13px",
       fontWeight: 500,
-      color: "darkcyan",
+      color: "#ff4a57",
     },
   },
   active: {
     // background: "#5AFF8080 !important",
-    background: "#262D54 !important",
+    background: "rgba(174, 214, 241,.3) !important",
     borderRadius: "10px !important",
   },
 }));
 
-export default function NavbarDrawer({ openDrawer, fnActive, active }) {
+export default function NavbarDrawer({
+  openDrawer,
+  fnActive,
+  active,
+  darkMode,
+  setDarkMode,
+}) {
   const classes = useStyles();
   const [activeDrawer, setactiveDrawer] = useState(false);
   const [state, setState] = React.useState({
@@ -87,6 +96,21 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           onClick={() => fnActive("Home")}
         >
           <p className={`${classes.BrandNameStyle}`}>NAYON</p>
+          <IconButton
+            disableElevation
+            style={{ background: "#ff4a57", marginLeft: "auto" }}
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? (
+              <LightModeOutlinedIcon
+                style={{ fontSize: "16px", color: "#fff" }}
+              />
+            ) : (
+              <Brightness4OutlinedIcon
+                style={{ fontSize: "16px", color: "#fff" }}
+              />
+            )}
+          </IconButton>
         </ListItem>
         <Divider />
         <br />
@@ -97,7 +121,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("Home")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <HomeIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>Home</ListItemText>
@@ -110,7 +134,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("Experties")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <SurfingIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>
@@ -125,7 +149,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("Experience")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <AcUnitIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>
@@ -139,7 +163,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("My Works")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <GrainIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>
@@ -153,7 +177,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("Education")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <SchoolIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>
@@ -167,11 +191,31 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
           }`}
           onClick={() => fnActive("Contact")}
         >
-          <ListItemIcon style={{ color: "darkcyan", minWidth: "35px" }}>
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
             <ContactsIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText className={`${classes.menuItem}`}>Contact</ListItemText>
         </ListItem>
+        {/* <ListItem
+          button
+          className={`${classes.itemStyle} `}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+            {darkMode ? (
+              <LightModeOutlinedIcon
+                style={{ fontSize: "16px", color: "#fff" }}
+              />
+            ) : (
+              <Brightness4OutlinedIcon
+                style={{ fontSize: "16px", color: "#fff" }}
+              />
+            )}
+          </ListItemIcon>
+          <ListItemText className={`${classes.menuItem}`}>
+            Night Mode
+          </ListItemText>
+        </ListItem> */}
       </List>
     </Box>
   );
@@ -194,7 +238,7 @@ export default function NavbarDrawer({ openDrawer, fnActive, active }) {
             onOpen={toggleDrawer(anchor, true)}
             PaperProps={{
               sx: {
-                backgroundColor: "#061A38",
+                backgroundColor: "#1F2235",
               },
             }}
           >

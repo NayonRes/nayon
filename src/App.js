@@ -1,14 +1,14 @@
 import logo from "./logo.svg";
 import Home from "./pages/Home";
 
-// import './App.css';
+import "./App.css";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: "#5f9ea0",
+      main: "#ff4a57",
       contrastText: "#fff",
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main

@@ -2,10 +2,11 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
+import { Grid } from "@mui/material";
 const useStyles = makeStyles((theme) => ({
   h2: {
     fontSize: "32px",
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     fontWeight: 500,
     margin: "0px 0px 50px 0px",
     color: "#061A38",
@@ -41,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button2: {
-    border: "1px solid darkcyan",
-    padding: "10px 80px",
+    border: "1px solid #ff4a57",
+    padding: "10px 20px",
     borderRadius: "10px",
-    fontSize: "26px",
-    fontFamily: "'Inter', sans-serif",
+    fontSize: "16px",
+    fontFamily: "'Poppins', sans-serif",
     color: "#fff",
-    background: "darkcyan",
+    background: "#ff4a57",
     // color: "#061A38",
     // background: "#E3E56D",
     cursor: "pointer",
@@ -64,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const Email = () => {
+const Email = ({ darkMode }) => {
   const classes = useStyles();
   const form = useRef();
   const sendEmail = (e) => {
@@ -89,51 +90,69 @@ const Email = () => {
   return (
     <div
       style={{
-        background: "#fff",
-        maxWidth: "750px",
-        padding: "60px",
+        // background: "#fff",
+        // maxWidth: "750px",
+        padding: "20px 0",
         borderRadius: "8px",
-        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+        // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         margin: "auto",
         boxSizing: "border-box",
+        // background: darkMode && "rgba(174, 214, 241,.3)",
       }}
     >
       <form ref={form} onSubmit={sendEmail}>
-        <p className={classes.h2}>Send Me A Message</p>
-        <TextField
-          fullWidth
-          size="small"
-          id="name"
-          name="name"
-          label="Your Name"
-          variant="outlined"
-        />
-        <br />
-        <br />
-        <TextField
-          size="small"
-          fullWidth
-          id="email"
-          type="email"
-          name="email"
-          label="Your Email"
-          variant="outlined"
-        />
-        <br />
-        <br />
-        <TextField
-          id="standard-textarea"
-          name="message"
-          label="Message"
-          multiline
-          variant="outlined"
-          fullWidth
-          rows={4}
-        />
-        <br />
-        <br />
+        {/* <p className={classes.h2}>Send Me A Message</p> */}
+        {/* <p className={classes.h2} style={{ color: darkMode && "#fff" }}>
+                <span style={{ color: "#ff4a57" }}>Message</span> Me
+              </p> */}
+        <Grid container spacing={3}>
+          <Grid item sm={12} md={6}>
+            {" "}
+            <TextField
+              fullWidth
+              className={`${darkMode && "message_form_input_style"}`}
+              size="small"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              variant="outlined"
+            />
+          </Grid>
+
+          <Grid item sm={12} md={6}>
+            <TextField
+              fullWidth
+              className={`${darkMode && "message_form_input_style"}`}
+              size="small"
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              className={`${darkMode && "message_form_textarea_style"}`}
+              id="standard-textarea"
+              name="message"
+              placeholder="Message"
+              multiline
+              variant="outlined"
+              fullWidth
+              rows={4}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <input
+              className={classes.button2}
+              type="submit"
+              value="Message Me"
+            />
+          </Grid>
+        </Grid>
+
         {/* <textarea name="message" /> */}
-        <input className={classes.button2} type="submit" value="Send" />
       </form>
     </div>
   );
