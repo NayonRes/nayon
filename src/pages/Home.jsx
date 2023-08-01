@@ -78,18 +78,19 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: "0px !important",
   },
   homeSectionStyle: {
-    minHeight: "calc(100vh - 70px)",
+    height: "calc(100vh - 70px)",
+    maxHeight: "862px",
     display: "flex !important",
     alignItems: "center",
     position: "relative",
     [theme.breakpoints.down("lg")]: {
-      minHeight: "700px",
+      height: "700px",
     },
     [theme.breakpoints.down("lg")]: {
-      minHeight: "700px",
+      height: "700px",
     },
     [theme.breakpoints.down("sm")]: {
-      minHeight: "calc(100vh - 70px)",
+      height: "calc(100vh - 70px)",
     },
   },
 
@@ -117,6 +118,11 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "22px",
+      lineHeight: "35px",
+      textAlign: "center",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "16px",
       lineHeight: "35px",
       textAlign: "center",
     },
@@ -272,7 +278,8 @@ const useStyles = makeStyles((theme) => ({
   workCard: {
     background: "#fff",
     minHeight: "220px",
-    boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+    // boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+    border: "1px solid #ddd",
     borderRadius: "10px",
     [theme.breakpoints.down("sm")]: {
       minHeight: "150px",
@@ -281,7 +288,7 @@ const useStyles = makeStyles((theme) => ({
   workCardImg: {
     width: "210px",
     height: "140px",
-    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    boxShadow: "rgba(0, 0, 0, 0.24) 0px 1px 2px",
     borderRadius: "10px",
     position: "absolute",
     left: "-20px",
@@ -359,10 +366,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   imageHolder: {
-    height: "calc(100vh - 80px)",
+    // height: "calc(100vh - 80px)",
     zIndex: 10,
     position: "relative",
-    
+
     "&:before": {
       content: "''",
       position: "absolute",
@@ -1361,7 +1368,7 @@ const Home = () => {
                   // className={classes.nameBox}
                 >
                   <Grid item sm={12} md={6} className={classes.myInfoBox}>
-                    {/* <Fade left cascade enter spy={reload}> */}
+                   
                     <div>
                       <p className={classes.h1} style={{ color: "#ff4a57" }}>
                         Welcome!
@@ -1402,7 +1409,7 @@ const Home = () => {
                       <Grid
                         container
                         alignItems="center"
-                        sx={{ justifyContent: { xs: "center", md: "center" } }}
+                        sx={{ justifyContent: { xs: "center", sm: "start" } }}
                       >
                         <div className={classes.iconDiv}>
                           <FacebookIcon className={classes.iconStyle} />
@@ -1415,7 +1422,7 @@ const Home = () => {
                         </div>
                       </Grid>
                     </div>
-                    {/* </Fade> */}
+                  
                   </Grid>
                   <Grid
                     item
@@ -1427,7 +1434,7 @@ const Home = () => {
                       container
                       alignItems="center"
                       justifyContent="center"
-                      // className={classes.pictureHolder}
+                      
                     >
                       <div className={classes.imageHolder}>
                         <img src={me} alt="" height="100%" />
@@ -1453,52 +1460,7 @@ const Home = () => {
                   </Grid>
                 </Grid>
 
-                {/* <Grid
-                  container
-                  alignItems="center"
-                  justifyContent="space-between"
-                  className={classes.gridMargin}
-                >
-                  <Fade delay={1500} bottom spy={reload}>
-                    <Grid item>
-                      <p
-                        className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#819a9b" }}
-                      >
-                        Develop For
-                      </p>
-                      <p className={classes.h4} style={{ color: "#ff4a57" }}>
-                        Web Application
-                      </p>
-                    </Grid>
-                  </Fade>
-                  <Fade delay={1000} bottom spy={reload}>
-                    <Grid item style={{ textAlign: "right" }}>
-                      <p
-                        className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#819a9b" }}
-                      >
-                        Phone
-                      </p>
-                      <p className={classes.h4} style={{ color: "#ff4a57" }}>
-                        (+880) 01793 66 15 17
-                      </p>
-                    </Grid>
-                  </Fade>
-                  <Fade delay={500} bottom spy={reload}>
-                    <Grid item style={{ textAlign: "right" }}>
-                      <p
-                        className={`${classes.h5} ${classes.marginBottomStyle}`}
-                        style={{ color: "#819a9b" }}
-                      >
-                        Drop your Message
-                      </p>
-                      <p className={classes.h4} style={{ color: "#ff4a57" }}>
-                        mahnayon@gmail.com
-                      </p>
-                    </Grid>
-                  </Fade>
-                </Grid> */}
+                
               </div>
             </section>
           </Container>
@@ -1790,6 +1752,10 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
@@ -1806,7 +1772,10 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={8} className={classes.workCardDetailSide}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           Newroz Technologies Limited
                         </p>
@@ -1814,7 +1783,11 @@ const Home = () => {
 
                       <p
                         className={`${classes.cardDetail}`}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -1822,9 +1795,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Adobe XD to React js
+                        <b>Designed :</b> Adobe XD to React js
                       </p>
 
                       {/* <a
@@ -1858,20 +1831,31 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
                   >
                     <Grid item xs={8} className={classes.workCardDetailSide2}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           Payment Integration API
                         </p>
                       </div>
                       <p
                         className={classes.cardDetail}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -1879,9 +1863,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Own Design
+                        <b>Designed :</b> Own Design
                       </p>
 
                       <a
@@ -1917,6 +1901,10 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
@@ -1933,14 +1921,21 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={8} className={classes.workCardDetailSide}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           Kinder Cubby
                         </p>
                       </div>
                       <p
                         className={classes.cardDetail}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -1948,9 +1943,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Figma to React js
+                        <b>Designed :</b> Figma to React js
                       </p>
                       <a
                         href="https://www.kindercubby.com/"
@@ -1974,20 +1969,31 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
                   >
                     <Grid item xs={8} className={classes.workCardDetailSide2}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           E-Commerce Cart System
                         </p>
                       </div>
                       <p
                         className={classes.cardDetail}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -1995,9 +2001,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Own Design
+                        <b>Designed :</b> Own Design
                       </p>
                       <a
                         href="https://fastpay-ecom.netlify.app/"
@@ -2033,6 +2039,10 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
@@ -2049,14 +2059,21 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={8} className={classes.workCardDetailSide}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           Admin Panel (Kinder Cubby)
                         </p>
                       </div>
                       <p
                         className={`${classes.cardDetail}`}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -2064,9 +2081,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Own Design
+                        <b>Designed :</b> Own Design
                       </p>
                       {/* <a
                         href="https://fastpay-ecom.netlify.app/"
@@ -2088,20 +2105,31 @@ const Home = () => {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
                     className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
                     container
                     alignItems="center"
                     data-aos="fade-zoom-in"
                   >
                     <Grid item xs={8} className={classes.workCardDetailSide2}>
                       <div className={classes.cardTitleMargin}>
-                        <p className={classes.h3} style={{ fontWeight: 400 }}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
                           {" "}
                           Support Panel (FastPay)
                         </p>
                       </div>
                       <p
                         className={`${classes.cardDetail}`}
-                        style={{ marginBottom: "5px", textAlign: "left" }}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
                       >
                         <b>Frontend Technologies :</b> HTML 5, CSS 3,
                         Material-UI, JavaScript,React Js, React Hooks,React
@@ -2109,9 +2137,9 @@ const Home = () => {
                       </p>
                       <p
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Desinged :</b> Own Design
+                        <b>Designed :</b> Own Design
                       </p>
                       {/* <a
                     href="https://www.newroztech.com/"
