@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiTypography-root": {
       fontSize: "13px",
       fontWeight: 500,
-      color: "#ff4a57",
+      // color: "#ff4a57",
     },
   },
   active: {
@@ -98,16 +98,25 @@ export default function NavbarDrawer({
           <p className={`${classes.BrandNameStyle}`}>NAYON</p>
           <IconButton
             disableElevation
-            style={{ background: "#ff4a57", marginLeft: "auto" }}
+            style={{
+              background: darkMode ? "#ff4a57" : "#ff4a57",
+              marginLeft: "auto",
+            }}
             onClick={() => setDarkMode(!darkMode)}
           >
             {darkMode ? (
               <LightModeOutlinedIcon
-                style={{ fontSize: "16px", color: "#fff" }}
+                style={{
+                  fontSize: "16px",
+                  color: darkMode ? "#fff" : "#fff",
+                }}
               />
             ) : (
               <Brightness4OutlinedIcon
-                style={{ fontSize: "16px", color: "#fff" }}
+                style={{
+                  fontSize: "16px",
+                  color: darkMode ? "#fff" : "#fff",
+                }}
               />
             )}
           </IconButton>
@@ -121,10 +130,20 @@ export default function NavbarDrawer({
           }`}
           onClick={() => fnActive("Home")}
         >
-          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+          <ListItemIcon
+            style={{
+              color: darkMode ? "#ff4a57" : "#1F2235",
+              minWidth: "35px",
+            }}
+          >
             <HomeIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText className={`${classes.menuItem}`}>Home</ListItemText>
+          <ListItemText
+            className={`${classes.menuItem}`}
+            style={{ color: darkMode ? "#ff4a57" : "#1F2235" }}
+          >
+            Home
+          </ListItemText>
         </ListItem>
 
         {/* <ListItem
@@ -149,10 +168,18 @@ export default function NavbarDrawer({
           }`}
           onClick={() => fnActive("Experience")}
         >
-          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+          <ListItemIcon
+            style={{
+              color: darkMode ? "#ff4a57" : "#1F2235",
+              minWidth: "35px",
+            }}
+          >
             <AcUnitIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText className={`${classes.menuItem}`}>
+          <ListItemText
+            className={`${classes.menuItem}`}
+            style={{ color: darkMode ? "#ff4a57" : "#1F2235" }}
+          >
             Experience
           </ListItemText>
         </ListItem>
@@ -163,10 +190,18 @@ export default function NavbarDrawer({
           }`}
           onClick={() => fnActive("My Works")}
         >
-          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+          <ListItemIcon
+            style={{
+              color: darkMode ? "#ff4a57" : "#1F2235",
+              minWidth: "35px",
+            }}
+          >
             <GrainIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText className={`${classes.menuItem}`}>
+          <ListItemText
+            className={`${classes.menuItem}`}
+            style={{ color: darkMode ? "#ff4a57" : "#1F2235" }}
+          >
             My Works
           </ListItemText>
         </ListItem>
@@ -177,10 +212,18 @@ export default function NavbarDrawer({
           }`}
           onClick={() => fnActive("Education")}
         >
-          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+          <ListItemIcon
+            style={{
+              color: darkMode ? "#ff4a57" : "#1F2235",
+              minWidth: "35px",
+            }}
+          >
             <SchoolIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText className={`${classes.menuItem}`}>
+          <ListItemText
+            className={`${classes.menuItem}`}
+            style={{ color: darkMode ? "#ff4a57" : "#1F2235" }}
+          >
             Education
           </ListItemText>
         </ListItem>
@@ -191,10 +234,20 @@ export default function NavbarDrawer({
           }`}
           onClick={() => fnActive("Contact")}
         >
-          <ListItemIcon style={{ color: "#ff4a57", minWidth: "35px" }}>
+          <ListItemIcon
+            style={{
+              color: darkMode ? "#ff4a57" : "#1F2235",
+              minWidth: "35px",
+            }}
+          >
             <ContactsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText className={`${classes.menuItem}`}>Contact</ListItemText>
+          <ListItemText
+            className={`${classes.menuItem}`}
+            style={{ color: darkMode ? "#ff4a57" : "#1F2235" }}
+          >
+            Contact
+          </ListItemText>
         </ListItem>
         {/* <ListItem
           button
@@ -238,7 +291,8 @@ export default function NavbarDrawer({
             onOpen={toggleDrawer(anchor, true)}
             PaperProps={{
               sx: {
-                backgroundColor: "#1F2235",
+                backgroundColor: darkMode ? "#1F2235" : "#fff",
+                // backgroundColor: "#1F2235",
               },
             }}
           >
