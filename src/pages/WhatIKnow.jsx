@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
     background: "#fff",
     padding: "30px 15px",
     borderRadius: "10px",
-    boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+    // boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+    border: "1px solid #ddd",
     textAlign: "center",
     [theme.breakpoints.down("sm")]: {
       width: "60px",
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const WhatIKnow = () => {
+const WhatIKnow = ({ darkMode }) => {
   const classes = useStyles();
   const data = [
     { img: bootstrap, name: "Bootstrap" },
@@ -101,13 +102,24 @@ const WhatIKnow = () => {
     ],
   };
   return (
-    <div> 
+    <div>
       <Slider {...settings}>
         {data.map((item, i) => (
           <div key={i}>
-            <div className={classes.card}>
+            <div
+              className={classes.card}
+              style={{
+                background: darkMode && "rgba(174, 214, 241,.3)",
+                border: darkMode && "none",
+              }}
+            >
               <img src={item.img} alt="" className={classes.cardImage} />
-              <p className={classes.cardTitle}>{item.name}</p>
+              <p
+                className={classes.cardTitle}
+                style={{ color: darkMode && "#fff" }}
+              >
+                {item.name}
+              </p>
             </div>
           </div>
         ))}

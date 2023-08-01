@@ -81,13 +81,15 @@ const useStyles = makeStyles((theme) => ({
     height: "calc(100vh - 70px)",
     maxHeight: "862px",
     display: "flex !important",
-    alignItems: "center",
+    alignItems: "stretch",
     position: "relative",
     [theme.breakpoints.down("lg")]: {
       height: "700px",
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down("md")]: {
       height: "700px",
+      alignItems: "center",
+      flexDirection: "column",
     },
     [theme.breakpoints.down("sm")]: {
       height: "calc(100vh - 70px)",
@@ -116,6 +118,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "40px",
       lineHeight: "65px",
     },
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
+    },
     [theme.breakpoints.down("sm")]: {
       fontSize: "22px",
       lineHeight: "35px",
@@ -137,6 +142,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xl")]: {
       fontSize: "30px",
       lineHeight: "65px",
+    },
+    [theme.breakpoints.down("md")]: {
+      textAlign: "center",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "22px",
@@ -208,10 +216,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       // fontSize: "20px",
       fontSize: "14px",
+      textAlign: "center",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "14px",
-      textAlign: "center",
     },
   },
   h4: {
@@ -369,6 +377,7 @@ const useStyles = makeStyles((theme) => ({
     // height: "calc(100vh - 80px)",
     zIndex: 10,
     position: "relative",
+    // display: "inline-block",
 
     "&:before": {
       content: "''",
@@ -382,12 +391,23 @@ const useStyles = makeStyles((theme) => ({
       background: "rgba(174, 214, 241,.3)",
       zIndex: -1,
     },
+    "& img": {
+      height: "Calc(100vh - 150px)",
+      [theme.breakpoints.down("lg")]: {
+        height: "600px",
+      },
+      [theme.breakpoints.down("md")]: {
+        height: "400px",
+      },
+    },
   },
   pictureBox: {
     width: "320px",
     height: "320px",
     overflow: "hidden",
     borderRadius: "50%",
+    background: "rgba(174, 214, 241,.3)",
+    margin: "auto",
     [theme.breakpoints.down("xl")]: {
       width: "230px",
       height: "230px",
@@ -849,6 +869,9 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   myInfoBox: {
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
     [theme.breakpoints.down("md")]: {
       order: 2,
     },
@@ -932,6 +955,14 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: "1px solid #E3E56D",
       marginBottom: "10px !important",
       borderRadius: "10px",
+    },
+  },
+  ForOtherVersionLeftImage: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
   },
   ForOtherVersion: {
@@ -1360,108 +1391,103 @@ const Home = () => {
               id="Home"
               className={`${classes.sectionPaddingRightLeft} ${classes.homeSectionStyle}`}
             >
-              <div className={classes.homeInfoBox}>
-                <Grid
+              {/* <div className={classes.homeInfoBox}> */}
+              {/* <Grid
                   container
                   alignItems="center"
                   justifyContent="center"
                   // className={classes.nameBox}
-                >
-                  <Grid item sm={12} md={6} className={classes.myInfoBox}>
-                   
-                    <div>
-                      <p className={classes.h1} style={{ color: "#ff4a57" }}>
-                        Welcome!
-                        {/* <span style={{ color: "cadetblue" }}>
-                          {" "}
-                          Nayon Hossain.
-                        </span> */}
-                      </p>
-
-                      <p
-                        className={classes.designationStyle2}
-                        style={{ color: darkMode && "#fff" }}
-                      >
-                        I am{" "}
-                        <TextTransition
-                          text={TEXTS[index % TEXTS.length]}
-                          springConfig={presets.wobbly}
-                          inline={true}
-                          noOverflow={true}
-                          // delay={3000}
-                        />
-                      </p>
-
-                      <br />
-
-                      <div className={classes.designationStyle}>
-                        <p
-                          className={classes.myDetails}
-                          style={{ color: darkMode && "#fff" }}
-                        >
-                          I'm a Frontend Developer with extensive experience for
-                          over 2 years. My expertise is to desing & developed
-                          web applications using React Js.
-                        </p>
-                      </div>
-                      <br />
-                      <br />
-                      <Grid
-                        container
-                        alignItems="center"
-                        sx={{ justifyContent: { xs: "center", sm: "start" } }}
-                      >
-                        <div className={classes.iconDiv}>
-                          <FacebookIcon className={classes.iconStyle} />
-                        </div>
-                        <div className={classes.iconDiv}>
-                          <InstagramIcon className={classes.iconStyle} />
-                        </div>
-                        <div className={classes.iconDiv}>
-                          <LinkedInIcon className={classes.iconStyle} />
-                        </div>
-                      </Grid>
-                    </div>
-                  
-                  </Grid>
-                  <Grid
-                    item
-                    sm={12}
-                    md={6}
-                    className={` ${classes.ForOtherVersion}`}
-                  >
-                    <Grid
-                      container
-                      alignItems="center"
-                      justifyContent="center"
-                      
-                    >
-                      <div className={classes.imageHolder}>
-                        <img src={me} alt="" height="100%" />
-                      </div>
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    item
-                    sm={12}
-                    md={6}
+                  style={{background:"blue"}}
+                > */}
+              <div className={classes.myInfoBox}>
+                <div>
+                  <div
                     className={`${classes.myImageBox} ${classes.ForMobileVersion}`}
                   >
-                    <Grid
+                    {/* <Grid
                       container
                       alignItems="center"
                       justifyContent="center"
                       className={classes.pictureHolder}
-                    >
-                      <div className={classes.pictureBox}>
-                        <img src={nayon} alt="" width="100%" />
-                      </div>
-                    </Grid>
-                  </Grid>
-                </Grid>
+                    > */}
+                    <div className={classes.pictureBox}>
+                      <img src={nayon} alt="" width="175px" />
+                    </div>
+                    {/* </Grid> */}
+                  </div>
+                  <p className={classes.h1} style={{ color: "#ff4a57" }}>
+                    Welcome!
+                    {/* <span style={{ color: "cadetblue" }}>
+                          {" "}
+                          Nayon Hossain.
+                        </span> */}
+                  </p>
 
-                
+                  <p
+                    className={classes.designationStyle2}
+                    style={{ color: darkMode && "#fff" }}
+                  >
+                    I am{" "}
+                    <TextTransition
+                      text={TEXTS[index % TEXTS.length]}
+                      springConfig={presets.wobbly}
+                      inline={true}
+                      noOverflow={true}
+                      // delay={3000}
+                    />
+                  </p>
+
+                  <br />
+
+                  <div className={classes.designationStyle}>
+                    <p
+                      className={classes.myDetails}
+                      style={{ color: darkMode && "#fff" }}
+                    >
+                      I'm a Frontend Developer with extensive experience for
+                      over 2 years. My expertise is to desing & developed web
+                      applications using React Js.
+                    </p>
+                  </div>
+                  <br />
+                  <br />
+                  <Grid
+                    container
+                    alignItems="center"
+                    sx={{
+                      justifyContent: {
+                        xs: "center",
+                        sm: "center",
+                        md: "start",
+                      },
+                    }}
+                  >
+                    <div className={classes.iconDiv}>
+                      <FacebookIcon className={classes.iconStyle} />
+                    </div>
+                    <div className={classes.iconDiv}>
+                      <InstagramIcon className={classes.iconStyle} />
+                    </div>
+                    <div className={classes.iconDiv}>
+                      <LinkedInIcon className={classes.iconStyle} />
+                    </div>
+                  </Grid>
+                </div>
               </div>
+              <div
+                style={{ flex: 1 }}
+                className={` ${classes.ForOtherVersionLeftImage}`}
+              >
+                {/* <Grid container alignItems="flex-end" justifyContent="center"> */}
+                <div className={classes.imageHolder}>
+                  <img src={me} alt="" height="100%" />
+                </div>
+                {/* </Grid> */}
+              </div>
+
+              {/* </Grid> */}
+
+              {/* </div> */}
             </section>
           </Container>
         </div>
@@ -1721,7 +1747,7 @@ const Home = () => {
                 {" "}
                 Tools & Technologies
               </p>
-              <WhatIKnow />
+              <WhatIKnow darkMode={darkMode} />
             </div>
           </section>
         </Container>
@@ -2423,8 +2449,8 @@ const Home = () => {
                 </Grid>
               </div>
               <br />
-              <br />
-              <br />
+              <br className={classes.ForOtherVersion} />
+              <br className={classes.ForOtherVersion} />
 
               <Email darkMode={darkMode} />
             </section>
