@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import Home from "./pages/Home";
-
+import { SnackbarProvider } from "notistack";
+import Slide from "@mui/material/Slide";
 import "./App.css";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
@@ -27,7 +28,17 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
+      <SnackbarProvider
+        maxSnack={1}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        TransitionComponent={Slide}
+      >
+
         <Home />
+      </SnackbarProvider>
       </ThemeProvider>
     </div>
   );

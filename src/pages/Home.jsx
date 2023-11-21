@@ -21,11 +21,13 @@ import work3 from "../assets/images/work3.jpg";
 import work4 from "../assets/images/work4.jpg";
 import NewrozImage from "../assets/images/NewrozImage.png";
 import PaymentIntegration from "../assets/images/Payment-Integration.png";
+import qrpay from "../assets/images/qrpay.png";
 import homeBackground from "../assets/images/homeBackground.png";
 import CartSystem from "../assets/images/CartSystem.png";
 import supportPanel from "../assets/images/supportPanel2.png";
 import kindercubby from "../assets/images/kindercubby.png";
 import kindercubbyAdmin from "../assets/images/kindercubbyAdmin.png";
+import VerifyMe from "../assets/images/VerifyMe.png";
 import webDevelopment from "../assets/images/web-development.svg";
 import skill from "../assets/images/skill.png";
 import education from "../assets/images/education.png";
@@ -63,7 +65,6 @@ import LanguageIcon from "@mui/icons-material/Language";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness4OutlinedIcon from "@mui/icons-material/Brightness4Outlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-
 const useStyles = makeStyles((theme) => ({
   themeBackground: {
     // backgroundColor: "#1F2235",
@@ -614,7 +615,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#ff4a57",
 
     "&:hover": {
-      color: "#1F2235",
+      color: "#fff",
+      // color: "#1F2235",
     },
   },
   logoStyle: {
@@ -681,7 +683,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#ff4a57",
   },
   darkModeActive: {
-    color: "#1F2235",
+    color: "#fff",
+    // color: "#1F2235",
   },
 
   buttonStyle: {
@@ -1050,7 +1053,7 @@ const Home = () => {
       duration: "May 2021 - Present",
       company: "Newroz Technologies Limited.",
       detail: [
-        "Developed and Maintaining 4 new projects (Daycare Website,API Integration Website, Daycare Website Admin Panel, Financial Admin Panel)",
+        "Developed and Maintaining 6 new projects (Payment Platform, Daycare Website, API Integration Website, Daycare Admin Panel, Financial Admin Panel,Verify Me Service Admin Panel)",
         "Refactored 2 projects completely with new efficient architecture (Company Website, Support Panel).",
         "Developing and Maintaining Marketing Panel and Commission panel with new efficient architecture.",
         "Collaborating with the other developers and the testing team.",
@@ -1572,8 +1575,9 @@ const Home = () => {
                       style={{ color: darkMode && "#fff" }}
                     >
                       {" "}
-                      4 new projects (Daycare Website,API Integration Website,
-                      Daycare Website Admin Panel, Financial Admin Panel).
+                      4 new projects ( Payment Platform, Daycare Website, API
+                      Integration Website, Daycare Admin Panel, Financial Admin
+                      Panel,Verify Me Service Admin Panel).
                     </p>
                   </div>
                 </div>
@@ -1872,7 +1876,7 @@ const Home = () => {
                           style={{ fontWeight: 400, color: darkMode && "#fff" }}
                         >
                           {" "}
-                          Payment Integration API
+                          The QRPAY (Payment Platform)
                         </p>
                       </div>
                       <p
@@ -1891,11 +1895,11 @@ const Home = () => {
                         className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
                         style={{ textAlign: "left", color: darkMode && "#fff" }}
                       >
-                        <b>Designed :</b> Own Design
+                        <b>Designed :</b> Figma to React js
                       </p>
 
                       <a
-                        href="https://developer.fast-pay.iq"
+                        href="https://www.theqrpay.com/"
                         target="_blank"
                         style={{ textDecoration: "none" }}
                       >
@@ -1913,7 +1917,7 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={4} style={{ position: "relative" }}>
                       <img
-                        src={PaymentIntegration}
+                        src={qrpay}
                         alt=""
                         className={classes.workCardImg}
                         style={{ right: "-20px", left: "auto" }}
@@ -2010,6 +2014,76 @@ const Home = () => {
                           style={{ fontWeight: 400, color: darkMode && "#fff" }}
                         >
                           {" "}
+                          Payment Integration API
+                        </p>
+                      </div>
+                      <p
+                        className={classes.cardDetail}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
+                      >
+                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                        Material-UI, JavaScript,React Js, React Hooks,React
+                        Context API,RESTful APIs.
+                      </p>
+                      <p
+                        className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
+                      >
+                        <b>Designed :</b> Own Design
+                      </p>
+
+                      <a
+                        href="https://developer.fast-pay.iq"
+                        target="_blank"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          size="small"
+                          disableElevation
+                          startIcon={<LanguageIcon />}
+                          className={classes.buttonStyle}
+                        >
+                          Take a look
+                        </Button>
+                      </a>
+                    </Grid>
+                    <Grid item xs={4} style={{ position: "relative" }}>
+                      <img
+                        src={PaymentIntegration}
+                        alt=""
+                        className={classes.workCardImg}
+                        style={{ right: "-20px", left: "auto" }}
+                        data-aos="fade-left"
+                        data-aos-offset="50"
+                        data-aos-easing="ease-in-sine"
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+                {/* <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                  <Grid
+                    className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
+                    container
+                    alignItems="center"
+                    data-aos="fade-zoom-in"
+                  >
+                    <Grid item xs={8} className={classes.workCardDetailSide2}>
+                      <div className={classes.cardTitleMargin}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
+                          {" "}
                           E-Commerce Cart System
                         </p>
                       </div>
@@ -2060,7 +2134,7 @@ const Home = () => {
                       />
                     </Grid>
                   </Grid>
-                </Grid>
+                </Grid> */}
 
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
                   <Grid
@@ -2194,6 +2268,72 @@ const Home = () => {
                     </Grid>
                   </Grid>
                 </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                  <Grid
+                    className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      border: darkMode && "none",
+                    }}
+                    container
+                    alignItems="center"
+                    data-aos="fade-zoom-in"
+                  >
+                    <Grid item xs={4} style={{ position: "relative" }}>
+                      <img
+                        src={VerifyMe}
+                        alt=""
+                        className={classes.workCardImg}
+                        data-aos="fade-right"
+                        data-aos-offset="50"
+                        data-aos-easing="ease-in-sine"
+                      />
+                    </Grid>
+                    <Grid item xs={8} className={classes.workCardDetailSide}>
+                      <div className={classes.cardTitleMargin}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
+                          {" "}
+                          Admin Panel (Verify Me)
+                        </p>
+                      </div>
+                      <p
+                        className={`${classes.cardDetail}`}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
+                      >
+                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                        Material-UI, JavaScript,React Js, React Hooks,React
+                        Context API,RESTful APIs.
+                      </p>
+                      <p
+                        className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
+                      >
+                        <b>Designed :</b> Figma to React js
+                      </p>
+                      {/* <a
+                        href="https://fastpay-ecom.netlify.app/"
+                        target="_blank"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Button
+                          color="secondary"
+                          variant="outlined"
+                          disableElevation
+                          size="small"
+                        >
+                          Take a look
+                        </Button>
+                      </a> */}
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </div>
           </section>
@@ -2215,6 +2355,7 @@ const Home = () => {
             <p className={classes.h2} style={{ color: darkMode && "#fff" }}>
               My <span style={{ color: "#ff4a57" }}> IT Education</span>
             </p>
+
             <div className={classes.educationBox}>
               {educationData.map((item, i) =>
                 i % 2 === 0 ? (
@@ -2227,9 +2368,11 @@ const Home = () => {
                     {/* <div className={classes.cardBox} key={i}> */}
                     <div
                       className={classes.card}
-                      style={{
-                        background: darkMode && "rgba(174, 214, 241,.3)",
-                      }}
+                      style={
+                        {
+                          // background: darkMode && "rgba(174, 214, 241,.3)",
+                        }
+                      }
                     >
                       <div className={classes.cardTitleBox}>
                         <Grid

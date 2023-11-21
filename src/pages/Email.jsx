@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 import { Grid } from "@mui/material";
+import { useSnackbar } from "notistack";
 const useStyles = makeStyles((theme) => ({
   h2: {
     fontSize: "32px",
@@ -68,9 +69,23 @@ const useStyles = makeStyles((theme) => ({
 const Email = ({ darkMode }) => {
   const classes = useStyles();
   const form = useRef();
+  const { enqueueSnackbar } = useSnackbar();
+  const [loading, setLoading] = useState(false);
+  const handleSnakbarOpen = (msg, vrnt) => {
+    let duration;
+    if (vrnt === "error") {
+      duration = 3000;
+    } else {
+      duration = 1000;
+    }
+    enqueueSnackbar(msg, {
+      variant: vrnt,
+      autoHideDuration: duration,
+    });
+  };
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     emailjs
       .sendForm(
         "service_9j9l6yr",
@@ -81,9 +96,14 @@ const Email = ({ darkMode }) => {
       .then(
         (result) => {
           console.log(result.text);
+          handleSnakbarOpen("Message sent successfully", "success");
+          form.current.reset();
+          setLoading(false);
         },
         (error) => {
           console.log(error.text);
+          handleSnakbarOpen("Something went wrong", "error");
+          setLoading(false);
         }
       );
   };
@@ -109,6 +129,7 @@ const Email = ({ darkMode }) => {
           <Grid item xs={12} sm={12} md={6}>
             {" "}
             <TextField
+              required
               fullWidth
               className={`${darkMode && "message_form_input_style"}`}
               size="small"
@@ -121,6 +142,7 @@ const Email = ({ darkMode }) => {
 
           <Grid item xs={12} sm={12} md={6}>
             <TextField
+              required
               fullWidth
               className={`${darkMode && "message_form_input_style"}`}
               size="small"
@@ -133,6 +155,7 @@ const Email = ({ darkMode }) => {
           </Grid>
           <Grid item xs={12}>
             <TextField
+              required
               className={`${darkMode && "message_form_textarea_style"}`}
               id="standard-textarea"
               name="message"
@@ -145,9 +168,11 @@ const Email = ({ darkMode }) => {
           </Grid>
           <Grid item xs={12}>
             <input
+              disabled={loading}
               className={classes.button2}
+              // style={{ background: loading && "#ddd" }}
               type="submit"
-              value="Message Me"
+              value={loading ? "..." : "Message Me"}
             />
           </Grid>
         </Grid>
