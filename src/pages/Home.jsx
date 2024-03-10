@@ -394,6 +394,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "& img": {
       height: "Calc(100vh - 150px)",
+      maxHeight: "800px",
       [theme.breakpoints.down("lg")]: {
         height: "600px",
       },
