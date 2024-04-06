@@ -1466,15 +1466,27 @@ const Home = () => {
                       },
                     }}
                   >
-                    <div className={classes.iconDiv}>
+                    <a
+                      href="https://www.facebook.com/md.shan.96199344/"
+                      target="_blank"
+                      className={classes.iconDiv}
+                    >
                       <FacebookIcon className={classes.iconStyle} />
-                    </div>
-                    <div className={classes.iconDiv}>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/hossain_md.nayon/?hl=en"
+                      target="_blank"
+                      className={classes.iconDiv}
+                    >
                       <InstagramIcon className={classes.iconStyle} />
-                    </div>
-                    <div className={classes.iconDiv}>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/md-nayon-hossain-888404232/"
+                      target="_blank"
+                      className={classes.iconDiv}
+                    >
                       <LinkedInIcon className={classes.iconStyle} />
-                    </div>
+                    </a>
                   </Grid>
                 </div>
               </div>
@@ -2544,15 +2556,27 @@ const Home = () => {
                       (+880) 1793 66 15 17
                     </p>
                     <Grid container alignItems="center">
-                      <div className={classes.iconDiv}>
+                      <a
+                        href="https://www.facebook.com/md.shan.96199344/"
+                        target="_blank"
+                        className={classes.iconDiv}
+                      >
                         <FacebookIcon className={classes.iconStyle} />
-                      </div>
-                      <div className={classes.iconDiv}>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/hossain_md.nayon/?hl=en"
+                        target="_blank"
+                        className={classes.iconDiv}
+                      >
                         <InstagramIcon className={classes.iconStyle} />
-                      </div>
-                      <div className={classes.iconDiv}>
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/md-nayon-hossain-888404232/"
+                        target="_blank"
+                        className={classes.iconDiv}
+                      >
                         <LinkedInIcon className={classes.iconStyle} />
-                      </div>
+                      </a>
                     </Grid>
                   </Grid>
                   <Grid
