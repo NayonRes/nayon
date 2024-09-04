@@ -64,6 +64,27 @@ const WhatIKnow = ({ darkMode }) => {
     { img: visualstudio, name: "MS Visual Studio" },
     { img: MSVisualStudioCode, name: "Visual Studio Code" },
   ];
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "red" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "green" }}
+        onClick={onClick}
+      />
+    );
+  }
   const settings = {
     className: "center",
     // dots: true,
@@ -76,6 +97,8 @@ const WhatIKnow = ({ darkMode }) => {
     speed: 2000,
     autoplaySpeed: 2000,
     centerMode: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     centerPadding: "120px",
     responsive: [
       {

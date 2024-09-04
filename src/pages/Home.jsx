@@ -1196,7 +1196,7 @@ const Home = () => {
         // box-shadow: 0 10px 15px rgba(25,25,25,0.1);
       } else if (y > 80) {
         navbarPosition.style.background = "rgba(247, 249, 249, 0.5)";
-        navbarPosition.style.backdropFilter = "blur(5px)";
+        navbarPosition.style.backdropFilter = "blur(40px)";
       }
       var currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
@@ -1449,7 +1449,7 @@ const Home = () => {
                       style={{ color: darkMode && "#fff" }}
                     >
                       I'm a Frontend Developer with extensive experience for
-                      over 2 years. My expertise is to desing & developed web
+                      over 3 years. My expertise is to desing & developed web
                       applications using React Js.
                     </p>
                   </div>
@@ -1588,7 +1588,7 @@ const Home = () => {
                       style={{ color: darkMode && "#fff" }}
                     >
                       {" "}
-                      4 new projects ( Payment Platform, Daycare Website, API
+                      14 new projects ( Payment Platform, Daycare Website, API
                       Integration Website, Daycare Admin Panel, Financial Admin
                       Panel,Verify Me Service Admin Panel).
                     </p>
