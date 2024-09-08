@@ -25,6 +25,7 @@ import qrpay from "../assets/images/qrpay.png";
 import homeBackground from "../assets/images/homeBackground.png";
 import CartSystem from "../assets/images/CartSystem.png";
 import supportPanel from "../assets/images/supportPanel2.png";
+import fibremit_branch from "../assets/images/fibremit_branch.png";
 import kindercubby from "../assets/images/kindercubby.png";
 import kindercubbyAdmin from "../assets/images/kindercubbyAdmin.png";
 import VerifyMe from "../assets/images/VerifyMe.png";
@@ -2344,6 +2345,72 @@ const Home = () => {
                           Take a look
                         </Button>
                       </a> */}
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
+                  <Grid
+                    className={classes.workCard}
+                    style={{
+                      background: darkMode && "rgba(174, 214, 241,.1)",
+                      border: darkMode && "none",
+                    }}
+                    container
+                    alignItems="center"
+                    data-aos="fade-zoom-in"
+                  >
+                    <Grid item xs={8} className={classes.workCardDetailSide2}>
+                      <div className={classes.cardTitleMargin}>
+                        <p
+                          className={classes.h3}
+                          style={{ fontWeight: 400, color: darkMode && "#fff" }}
+                        >
+                          {" "}
+                          FIbremit Branch Panel
+                        </p>
+                      </div>
+                      <p
+                        className={`${classes.cardDetail}`}
+                        style={{
+                          marginBottom: "5px",
+                          textAlign: "left",
+                          color: darkMode && "#fff",
+                        }}
+                      >
+                        <b>Frontend Technologies :</b> HTML 5, CSS 3,
+                        Material-UI, JavaScript,React Js, React Hooks,React
+                        Context API,RESTful APIs.
+                      </p>
+                      <p
+                        className={`${classes.cardDetail} ${classes.cardTitleMargin}`}
+                        style={{ textAlign: "left", color: darkMode && "#fff" }}
+                      >
+                        <b>Designed :</b> Own Design
+                      </p>
+                      {/* <a
+                    href="https://www.newroztech.com/"
+                    target="_blank"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      color="secondary"
+                      variant="contained"
+                      disableElevation
+                    >
+                      Take a look
+                    </Button>
+                  </a> */}
+                    </Grid>
+                    <Grid item xs={4} style={{ position: "relative" }}>
+                      <img
+                        src={fibremit_branch}
+                        alt=""
+                        className={classes.workCardImg}
+                        style={{ right: "-20px", left: "auto" }}
+                        data-aos="fade-left"
+                        data-aos-offset="50"
+                        data-aos-easing="ease-in-sine"
+                      />
                     </Grid>
                   </Grid>
                 </Grid>
