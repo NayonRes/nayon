@@ -132,7 +132,7 @@ const WhatIKnow = ({ darkMode }) => {
             <div
               className={classes.card}
               style={{
-                background: darkMode && "rgba(174, 214, 241,.3)",
+                background: darkMode && "rgba(174, 214, 241,.1)",
                 border: darkMode && "none",
               }}
             >

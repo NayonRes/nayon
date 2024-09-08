@@ -389,7 +389,7 @@ const useStyles = makeStyles((theme) => ({
       left: "50%",
       top: 0,
       transform: "translateX(-50%)",
-      background: "rgba(174, 214, 241,.3)",
+      background: "rgba(174, 214, 241,.1)",
       zIndex: -1,
     },
     "& img": {
@@ -408,7 +408,7 @@ const useStyles = makeStyles((theme) => ({
     height: "320px",
     overflow: "hidden",
     borderRadius: "50%",
-    background: "rgba(174, 214, 241,.3)",
+    background: "rgba(174, 214, 241,.1)",
     margin: "auto",
     [theme.breakpoints.down("xl")]: {
       width: "230px",
@@ -1796,7 +1796,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -1875,7 +1875,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -1945,7 +1945,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2013,7 +2013,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2083,7 +2083,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2153,7 +2153,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2219,7 +2219,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2285,7 +2285,7 @@ const Home = () => {
                   <Grid
                     className={classes.workCard}
                     style={{
-                      background: darkMode && "rgba(174, 214, 241,.3)",
+                      background: darkMode && "rgba(174, 214, 241,.1)",
                       border: darkMode && "none",
                     }}
                     container
@@ -2383,7 +2383,7 @@ const Home = () => {
                       className={classes.card}
                       style={
                         {
-                          // background: darkMode && "rgba(174, 214, 241,.3)",
+                          // background: darkMode && "rgba(174, 214, 241,.1)",
                         }
                       }
                     >
@@ -2474,7 +2474,7 @@ const Home = () => {
                     <div
                       className={classes.card}
                       style={{
-                        background: darkMode && "rgba(174, 214, 241,.3)",
+                        background: darkMode && "rgba(174, 214, 241,.1)",
                       }}
                     >
                       <div className={classes.cardTitleBox}>

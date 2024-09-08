@@ -334,7 +334,7 @@
 
 .message_form_input_style .MuiOutlinedInput-root {
   /* padding: 16.5px 42px 15.5px 16px !important; */
-  background: #4B596E !important;
+  background: rgba(174, 214, 241,.1) !important;
   /* border-radius: 8px !important; */
   /* letter-spacing: 0.32px !important;
   font-weight: 500 !important;
@@ -352,7 +352,7 @@
 }
 .message_form_textarea_style .MuiOutlinedInput-root {
   /* padding: 16.5px 42px 15.5px 16px !important; */
-  background: #4B596E !important;
+  background: rgba(174, 214, 241,.1) !important;
   /* border-radius: 8px !important;
   letter-spacing: 0.32px !important;
   font-weight: 500 !important;

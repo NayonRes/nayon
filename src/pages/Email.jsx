@@ -117,7 +117,7 @@ const Email = ({ darkMode }) => {
         // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
         margin: "auto",
         boxSizing: "border-box",
-        // background: darkMode && "rgba(174, 214, 241,.3)",
+        // background: darkMode && "rgba(174, 214, 241,.1)",
       }}
     >
       <form ref={form} onSubmit={sendEmail}>
