@@ -1214,7 +1214,7 @@ const Home = () => {
   useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
-      3000 // every 3 seconds
+      3000, // every 3 seconds
     );
     return () => clearTimeout(intervalId);
   }, []);
@@ -1449,9 +1449,15 @@ const Home = () => {
                       className={classes.myDetails}
                       style={{ color: darkMode && "#fff" }}
                     >
-                      I'm a Frontend Developer with extensive experience for
-                      over 3 years. My expertise is to desing & developed web
-                      applications using React Js.
+                      {/* I'm a Frontend Developer with extensive experience for
+                      over 5 years. My expertise is to desing & developed web
+                      applications using React Js and Next js. */}
+                      I’m a Frontend Developer with over 5 years of experience
+                      in designing and developing modern, responsive, and
+                      user-friendly web applications. My expertise includes
+                      building scalable applications using React.js and Next.js,
+                      with a strong focus on performance, clean UI/UX, and
+                      maintainable code.
                     </p>
                   </div>
                   <br />
@@ -2580,7 +2586,7 @@ const Home = () => {
                     </div>
                   </div>
                   // </Fade>
-                )
+                ),
               )}
             </div>
           </section>
